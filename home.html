@@ -25,27 +25,22 @@
 <body>
   <body style="padding: 0; margin: 0;">
   <div style="height: 85%; width: 90%;" id="map"></div>
-    var map = L.map('map').setView([34.118778, -97.59738], 13);
     <script type="text/javascript">
 
-                        var map = L.map("map").setView([43.37, -116.12], 6);
+                        var map = L.map('map').setView([34.118778, -97.59738]);
 
                         var osmAttribution =
                                 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
-                        var leafletRadarAttribution =
-                                '<a href="https://github.com/rwev/leaflet-radar">Radar</a>';
-
+                       
                         L.tileLayer(
-                                "https://tile-{s}.openstreetmap.fr/hot/{z}/{x}/{y}.png",
                                 {
                                         attribution: [
-                                                osmAttribution,
-                                                leafletRadarAttribution
+                                                osmAttribution
                                         ].join(" | ")
                                 }
                         ).addTo(map);
                         L.control.radar({}).addTo(map);
-                </script>
+       </script>
    <script src="/js/leaflet-0.7.2/leaflet.ajax.min.js"></script>
    var geojsonLayer = new L.GeoJSON.AJAX("RRWGeoJSON.geojson");       
     geojsonLayer.addTo(map);
