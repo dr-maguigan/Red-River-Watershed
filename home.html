@@ -23,24 +23,6 @@
 </style>
 </head>
 <body>
-  <body style="padding: 0; margin: 0;">
-  <div style="height: 85%; width: 90%;" id="map"></div>
-    <script type="text/javascript">
-
-                        var map = L.map('map').setView([34.118778, -97.59738]);
-
-                        var osmAttribution =
-                                'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors';
-                       
-                        L.tileLayer(
-                                {
-                                        attribution: [
-                                                osmAttribution
-                                        ].join(" | ")
-                                }
-                        ).addTo(map);
-                        L.control.radar({}).addTo(map);
-       </script>
    <script src="/js/leaflet-0.7.2/leaflet.ajax.min.js"></script>
    var geojsonLayer = new L.GeoJSON.AJAX("RRWGeoJSON.geojson");       
     geojsonLayer.addTo(map);
