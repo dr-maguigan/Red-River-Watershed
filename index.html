@@ -24,8 +24,13 @@
       font-family: Georgia;
       color: black;
       }
-#map{ height: 90%
-	width: 90% }
+	map{
+  		display: block;
+ 		max-width: 75%;
+ 		height: auto;
+ 		margin-left: auto;
+  		margin-right: auto;
+	}
 </style>
 </head>
  <body>
@@ -40,10 +45,6 @@
    			 	maxZoom: 19,
     				attribution: '© OpenStreetMap'
 			}).addTo(map);
-
-  			fetch("RRWGeoJSON.geojson").then(res => res.json()).then(data => {
-    				L.geoJson(data).addTo(map);
-  			});
 </script>
 </body>
 </html>
