@@ -18,13 +18,10 @@
       font-family: Georgia;
       color: black;
       }
-	map{
-  		display: block;
- 		max-width: 75%;
- 		height: auto;
- 		margin-left: auto;
-  		margin-right: auto;
-	}
+	#map {
+width: 960px;
+height: 500px;
+}
 </style>
 </head>
  <body>
@@ -35,11 +32,11 @@
 
                         var map = L.map('map').setView([34.118778, -97.59738], 3);
  
-			L.tileLayer('tile_open_street_map.png', {
-   			 	maxZoom: 13,
+			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png', {
+   				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery   <a href="http://mapbox.com">Mapbox</a>',
+    				maxZoom: 13,
 				minZoom: 5
-    				attribution: '© OpenStreetMap'
-			}).addTo(map);
+    			}).addTo(map);
 </script>
 </body>
 </html>
