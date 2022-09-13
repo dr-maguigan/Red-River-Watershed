@@ -19,7 +19,7 @@
       }
 	    #map{
          height: 600px;
-         width: 800px;
+         width: 900px;
          border: 3px solid gray;
          padding-left: 50px;
          padding-top: 50px;
@@ -31,17 +31,16 @@
 </head>
  <body>
 	<h1>Red River Watershed</h1>
-  <div id="map"></div>
+  	<div id="map"></div>
     
-  <script type="text/javascript">
-
-                        var map = L.map('map').setView([34.118778, -97.59738], 3);
+  	<script type="text/javascript">
+                        var map = L.map('map').setView([34.118778, -97.59738], 13);
  
 			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png', {
    				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery   <a href="http://mapbox.com">Mapbox</a>',
     				maxZoom: 13,
 				minZoom: 5
     			}).addTo(map);
-</script>
+	</script>
 </body>
 </html>
