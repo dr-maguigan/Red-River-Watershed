@@ -42,42 +42,12 @@ body {
 				minZoom: 5,
    				attribution: '© OpenStreetMap';
 			
-			var geojsonFeature = {
-                          "type": "FeatureCollection",
-  				"features": [
-   				 {
-      					"type": "Feature",
-     					 "geometry": {
-       					 "type": "Point",
-       					 "coordinates": [
-        				  -99.20804889044388,
+			var marker = L.marker([-99.20804889044388,
         				  34.5072669398175,
-        				  0
-       					 ]
-      				},
-     				 "properties": {
-       				 "marker-color": "#7e7e7e",
-        			 "marker-size": "small",
-        			 "marker-symbol": "circle",
-        			"COMID": 0,
-        			"EVENTDATE": "2014-12-04T00:00:00.000Z",
-        			"REACHCODE": "11120303000004",
-        			"REACHSMDAT": "1899-11-30T00:00:00.000Z",
-        			"REACHRESOL": "Medium",
-       				"FEATURECOM": 0,
-        			"FEATURECLA": 0,
-        			"SOURCE_ORI": "USGS, Water Resources Division",
-        			"SOURCE_DAT": "",
-        			"SOURCE_FEA": "07307028",
-        			"FEATUREDET": "http://waterdata.usgs.gov/nwis/nwisman/?site_no=07307028",
-        			"Measure": 90.96557,
-        			"Offset": 0,
-        			"EventType": "StreamGage",
-        			"FLComID": 561081
-      }
-    }	
-				
-		}).addTo(map);				
+        				  0]).addTo(map);	
+			
+			marker.bindPopup("<b>North Fork Red River Near Tipton, OK</b>").openPopup();
+        						
 	</script>
 </body>
 </html>
