@@ -10,6 +10,7 @@
   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
    crossorigin=""></script>
    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/js/leaflet-0.7.2/leaflet.ajax.min.js"></script>
   <style>
     h1 {text-align: center;}
     h2 {text-align: center;}
@@ -41,7 +42,8 @@ body {
     				maxZoom: 6,
    				attribution: '© OpenStreetMap'}).addTo(map);
 			
-			L.geoJSON("RRWB.geojson").addTo(map);
+			var geojsonLayer = new L.GeoJSON.AJAX("RRWB.geojson");       
+			geojsonLayer.addTo(map);
 			
 	</script>
 </body>
