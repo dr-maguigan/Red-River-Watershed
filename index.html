@@ -41,7 +41,9 @@ body {
     				maxZoom: 6,
    				attribution: '© OpenStreetMap'}).addTo(map);
 			
-			L.geoJSON("RRWB.geojson").addTo(map);
+			var geoJSON = "RRWB.geojson";
+		
+			L.geoJSON(geoJSON).addTo(map);
 			
 	</script>
 </body>
