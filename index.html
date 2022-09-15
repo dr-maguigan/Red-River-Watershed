@@ -42,26 +42,7 @@ body {
 				minZoom: 5,
    				attribution: '© OpenStreetMap'}).addTo(map);
 			
-			var marker = L.marker([-99.20805, 34.50727]).addTo(map);
-			
-			marker.bindPopup("<b>North Fork Red River</b><br>near Tipton, OK").openPopup();
-
-			var popup = L.popup()
-    			.setLatLng([-99.20805, 34.50727])
-    			.setContent("North Fork Red River near Tipton, OK")
-    			.openOn(map);
-
-			var popup = L.popup();
-
-			function onMapClick(e) {
-    				popup
-        			.setLatLng(e.latlng)
-        			.setContent("You clicked the map at " + e.latlng.toString())
-        			.openOn(map);
-				}
-
-			map.on('click', onMapClick);
-        						
+			var marker = L.marker([-99.20805, 34.50727]).addTo(map);        						
 	</script>
 </body>
 </html>
