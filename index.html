@@ -32,53 +32,19 @@ body {
 </head>
 <body>
 	<h1>Red River Watershed</h1>
-  	<div id="map"></div>
+  		<div id="map"></div>
 	     
-  	<script type="text/javascript">
+  		<script type="text/javascript">
                         var map = L.map('map').setView([34.118778, -97.59738], 6);
  
 			L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     				maxZoom: 10,
    				attribution: '© OpenStreetMap'}).addTo(map);
 
-	function jsAjax(){
-    		var ajaxRequest = new XMLHttpRequest();
-
-    		ajaxRequest.onreadystatechange = function(){
-        		if (ajaxRequest.readyState === 4){
-            		callback(ajaxRequest.response);
-        		};
-    		};
-
-    		ajaxRequest.open('GET', 'gages.geojson', true);
-
-    
-    		ajaxRequest.responseType = "json";
-
-    
-    		ajaxRequest.send();
-	};
-
-
-	window.onload = jsAjax();
-
-	function callback(response){
-    
-    		console.log(response);
-	};
 	
-	var gagestyle = {
-		radius: 3,
-                fillColor: "#789fc9",
-                color: "#000",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.4};
-			
-	var gage = ajaxRequest.addTo(map);
-		
-	L.geoJSON(RRWB.geojson).addTo(map);
+	
+			L.geoJSON(RRWB.geojson).addTo(map);
 
-</script>
+		</script>
 </body>
 </html>
