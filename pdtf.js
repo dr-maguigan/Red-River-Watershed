@@ -2,7 +2,7 @@ const data = {
 datasets: [{
     label: 'Gage Heights',
     data: [
-	["", "ht"], 
+	["date", "ht"], 
 	["1/1/2022", 6.04], 
 	["1/2/2022", 6.08], 
 	["1/3/2022", 5.98], 
@@ -343,3 +343,19 @@ const config = {
   type: 'line',
   data: data,
 };
+
+new Chart(
+    document.getElementById('pdtf'),
+    {
+      type: 'line',
+      data: {
+        labels: data.map(row => row.date),
+        datasets: [
+          {
+            label: 'Gage Height',
+            data: data.map(row => row.ht)
+          }
+        ]
+      }
+    }
+  );
