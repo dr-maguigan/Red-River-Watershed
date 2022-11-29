@@ -1,8 +1,3 @@
-const config = {
-  type: 'line',
-  data: data,
-};
-
 const data = {
 datasets: [{
     label: 'Gage Heights',
@@ -342,4 +337,9 @@ datasets: [{
     borderColor: 'rgb(166, 212, 255)',
     tension: 0.1
   }]
+};
+
+const config = {
+  type: 'line',
+  data: data,
 };
