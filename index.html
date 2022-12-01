@@ -52,7 +52,9 @@ body {
 
 gages = L.layerGroup([pdtfc, osm]);
 
-pdtfc.bindPopup(ctx);
+var bpc = ctx			
+			
+pdtfc.bindPopup(bpc);
     var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     				maxZoom: 13,
    				attribution: '© OpenStreetMap'});
