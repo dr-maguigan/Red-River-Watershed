@@ -46,7 +46,8 @@ body {
     data: $(this).serialize(),
     success: function(data) {
         var ctx = (data.value.timeSeries[0].values[0].value[0].value);
-        console.log(ctx);
+	var ctxnum = parseInt(ctx);
+        console.log(ctxnum);
     }
 });
 
