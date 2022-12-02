@@ -19,7 +19,7 @@ var childress;
         }
 });
 var childressCond;
-function updateChildressCond (childress) {
+function updateChildressCond (childress, childressCond) {
 	if 14 <= childress,
 		childressCond = "Moderate Flooding";
 	if 12 <= childress && childres <= 14,
