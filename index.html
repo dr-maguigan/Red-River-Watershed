@@ -35,62 +35,6 @@ body {
 	<h1>Red River Watershed</h1>
   		<div id="map"></div>
 	
-  		<script type="text/javascript">
-        var map = L.map('map', {
-				 center: [33.518778, -98.15738],
-				 zoom: 6.5
-			});
-			
-			
-    		
-var childress;    
-    $.ajax({
-    type: "GET",
-    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07299540&parameterCd=00065,63160&siteStatus=all",
-    dataType: 'json',
-    async: false,
-    data: $(this).serialize(),
-    success: function(data) {
-        ctx = (data.value.timeSeries[0].values[0].value[0].value);
-		ctxnum = parseInt(ctx);
-        childress = ctxnum;
-        }
-});
-
-var dotIcon = L.Icon.extend({
-    				options: {
-        				iconSize:     [22, 22],
-        				iconAnchor:   [22, 94],
-       					popupAnchor:  [-3, -76]
-    				}
-			});
-			var orangedot = new dotIcon({iconUrl: 'orange_dot.png'})
-			var reddot = new dotIcon({iconUrl: 'red_dot.png'})
-			var greendot = new dotIcon({iconUrl: 'green_dot.png'})
-
-var pdtfc = L.marker([34.566576613097574, -100.1963707590198], {icon: greendot}).bindPopup("Gage height: " + childress + '<a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "Childress.PNG"</a>', {maxWidth: "auto"}).addTo(map);
-
-			
-
-    var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    				maxZoom: 13,
-   				attribution: '© OpenStreetMap'}).addTo(map);
-                	
-			rrwb = "RRWB_Dissolve.json";
-
-                        L.geoJSON(JSON.parse(rrwb), {
-				style: geojsonstyle}).addTo(map);
-				
-			var geojsonstyle = {
-    				"color": "#8a8c89",
-    				"weight": 1,
-    				"opacity": 0.95
-			};
-			
-			L.geoJSON(watershed, {
-    				style: geojsonstyle
-			}).addTo(map);
-
-		</script>
+  		<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
