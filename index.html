@@ -66,9 +66,10 @@ var pdtfc = L.marker([34.566576613097574, -100.1963707590198]).bindPopup("Gage h
     var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     				maxZoom: 13,
    				attribution: '© OpenStreetMap'}).addTo(map);
-                
+                	
+			rrwb = "RRWB.geojson";
 
-                        L.geoJSON("RRWB.geojson".parse(), {
+                        L.geoJSON(rrwb.parse(), {
 				style: geojsonstyle}).addTo(map);
 				
 			var geojsonstyle = {
