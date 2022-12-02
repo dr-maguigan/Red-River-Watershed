@@ -29,8 +29,10 @@ var dotIcon = L.Icon.extend({
 			var orangedot = new dotIcon({iconUrl: 'orange_dot.png'})
 			var reddot = new dotIcon({iconUrl: 'red_dot.png'})
 			var greendot = new dotIcon({iconUrl: 'green_dot.png'})
+			
+			var br = <br>;
 
-var pdtfc = L.marker([34.566576613097574, -100.1963707590198], {icon: greendot}).bindPopup("Gage height: " + childress + '<a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+var pdtfc = L.marker([34.566576613097574, -100.1963707590198], {icon: greendot}).bindPopup("Station Name: Prairie Dog Town Fork of the Red River near Childress, TX" + br + "Current height: " + childress + br + "Current Stage: Normal" + br + "Historic Data: " + br + '<a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 			
 
