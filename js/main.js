@@ -30,7 +30,7 @@ var dotIcon = L.Icon.extend({
 			var reddot = new dotIcon({iconUrl: 'red_dot.png'})
 			var greendot = new dotIcon({iconUrl: 'green_dot.png'})
 
-var pdtfc = L.marker([34.566576613097574, -100.1963707590198], {icon: greendot}).bindPopup("Gage height: " + childress + '<a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "Childress.PNG"</a>', {maxWidth: "auto"}).addTo(map);
+var pdtfc = L.marker([34.566576613097574, -100.1963707590198], {icon: greendot}).bindPopup("Gage height: " + childress + '<a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 			
 
