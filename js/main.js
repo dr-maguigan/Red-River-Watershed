@@ -15,7 +15,7 @@ var childress;
     success: function(data) {
         ctx = (data.value.timeSeries[0].values[0].value[0].value);
 		ctxnum = parseInt(ctx);
-        childress = ctxnum;
+        childress = 13;
         }
 });
 var childressCond;
