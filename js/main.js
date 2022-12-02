@@ -18,15 +18,6 @@ var childress;
         childress = ctxnum;
         }
 });
-var childressCond;
-function updateChildressCond (childress, childressCond) {
-	if 14 <= childress,
-		childressCond = "Moderate Flooding";
-	if 12 <= childress && childress <= 14,
-		childressCond = "Minor Flooding";
-	else
-		childressCond = "Normal Conditions";
-};
 
 var dotIcon = L.Icon.extend({
     				options: {
@@ -38,6 +29,28 @@ var dotIcon = L.Icon.extend({
 			var orangedot = new dotIcon({iconUrl: 'orange_dot.png'})
 			var reddot = new dotIcon({iconUrl: 'red_dot.png'})
 			var greendot = new dotIcon({iconUrl: 'green_dot.png'})
+			
+			var childressCond;
+			function updateChildressCond (childress, childressCond) {
+				if 14 <= childress,
+					childressCond = "Moderate Flooding";
+				if 12 <= childress && childress <= 14,
+					childressCond = "Minor Flooding";
+				else
+					childressCond = "Normal Conditions";
+				return childressCond;
+			};
+
+			var childressicon;
+			function updateChildressCond (childress, childressicon, reddot, orangedot, greendot) {
+				if 14 <= childress,
+					childressicon = reddot;
+				if 12 <= childress && childress <= 14,
+					childressicon = orangedot;
+				else
+					childressicon = greendot;
+				return childressicon;
+			};
 
 var pdtfc = L.marker([34.566576613097574, -100.1963707590198], {icon: greendot}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>Current Stage: </h6><br><p>' + childressCond + '</p><br><h6>Historic Data: </h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
