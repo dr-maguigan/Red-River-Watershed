@@ -18,6 +18,15 @@ var childress;
         childress = ctxnum;
         }
 });
+var childressCond;
+function updateChildressCond (childress) {
+	if 14 <= childress,
+		childressCond = "Moderate Flooding";
+	if 12 <= childress && childres <= 14,
+		childressCond = "Minor Flooding";
+	else
+		childressCond = "Normal Conditions";
+};
 
 var dotIcon = L.Icon.extend({
     				options: {
@@ -30,7 +39,7 @@ var dotIcon = L.Icon.extend({
 			var reddot = new dotIcon({iconUrl: 'red_dot.png'})
 			var greendot = new dotIcon({iconUrl: 'green_dot.png'})
 
-var pdtfc = L.marker([34.566576613097574, -100.1963707590198], {icon: greendot}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>Current Stage: </h6><br><p>Normal</p><br><h6>Historic Data: </h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+var pdtfc = L.marker([34.566576613097574, -100.1963707590198], {icon: greendot}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>Current Stage: </h6><br><p>' + childressCond + '</p><br><h6>Historic Data: </h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 			
 
