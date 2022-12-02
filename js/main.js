@@ -22,7 +22,7 @@ var childressCond;
 function updateChildressCond (childress, childressCond) {
 	if 14 <= childress,
 		childressCond = "Moderate Flooding";
-	if 12 <= childress && childres <= 14,
+	if 12 <= childress && childress <= 14,
 		childressCond = "Minor Flooding";
 	else
 		childressCond = "Normal Conditions";
