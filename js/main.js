@@ -32,7 +32,7 @@ var dotIcon = L.Icon.extend({
     				options: {
         				iconSize:     [22, 22],
         				iconAnchor:   [22, 94],
-       					popupAnchor:  [-50, -76]
+       					popupAnchor:  [-80, -76]
     				}
 			});
 			var orangedot = new dotIcon({iconUrl: 'orange_dot.png'})
