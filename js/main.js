@@ -30,11 +30,14 @@ var dotIcon = L.Icon.extend({
 			var reddot = new dotIcon({iconUrl: 'red_dot.png'})
 			var greendot = new dotIcon({iconUrl: 'green_dot.png'})
 			
+			var g14 = 14
+			var b12 = 12
+			
 			var childressCond;
 			function updateChildressCond (childress, childressCond) {
-				if 14 <= childress,
+				if g14 <= childress,
 					childressCond = "Moderate Flooding";
-				if 12 <= childress && childress <= 14,
+				if b12 <= childress && childress <= g14,
 					childressCond = "Minor Flooding";
 				else
 					childressCond = "Normal Conditions";
@@ -43,9 +46,9 @@ var dotIcon = L.Icon.extend({
 
 			var childressicon;
 			function updateChildressCond (childress, childressicon, reddot, orangedot, greendot) {
-				if 14 <= childress,
+				if g14 <= childress,
 					childressicon = reddot;
-				if 12 <= childress && childress <= 14,
+				if b12 <= childress && childress <= g14,
 					childressicon = orangedot;
 				else
 					childressicon = greendot;
