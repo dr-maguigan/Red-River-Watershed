@@ -35,7 +35,7 @@ function getData () {
             	childressCond = stage;
   		}
    	let icon;
-	    	if (childress) => 14 {
+	    	if (childress >= 14) {
 			icon = reddot;
 		} else {
 		icon = (childress <10) ? greendot : orangedot;
