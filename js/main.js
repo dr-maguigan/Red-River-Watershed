@@ -31,23 +31,26 @@ var dotIcon = L.Icon.extend({
 			var greendot = new dotIcon({iconUrl: 'green_dot.png'})
 			
 			
-			var modlow = 14;
-			var minlow = 10;
+			var cmodlow = 14;
+			var cminlow = 10;
 			let childressCond = "Normal Conditions";
 			function updateChildressCond (childress, childressCond) {
-				
-				if modlow <= childress,
+				let modlow = document.getElementById("cmodlow").value;
+				let minlow = document.getElementById("cminlow").value;
+				if childress => modlow,
 					let childressCond = "Moderate Flooding";
-				if minlow <= childress && childress <= modlow,
+				if childress >= minlow && childress <= modlow,
 					let childressCond = "Minor Flooding";
 				return childressCond;
 			};
 
 			let childressicon = greendot;
 			function updateChildressCond (childress, childressicon, reddot, orangedot, greendot) {
-				if modlow <= childress,
+				let modlow = document.getElementById("cmodlow").value;
+				let minlow = document.getElementById("cminlow").value;
+				if childress => modlow,
 					let childressicon = reddot;
-				if minlow <= childress && childress <= modlow,
+				if childress >= minlow && childress <= modlow,
 					let childressicon = orangedot;
 				return childressicon;
 			};
