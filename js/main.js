@@ -34,11 +34,11 @@ var dotIcon = L.Icon.extend({
 			
 			var childressCond;
 			function updateChildressCond (childress, childressCond) {
-				var g14 = 14;
-				var b12 = 12;
-				if g14 <= childress,
+				let modlow = 14;
+				let minlow = 12;
+				if modlow <= childress,
 					childressCond = "Moderate Flooding";
-				if b12 <= childress && childress <= g14,
+				if minlow <= childress && childress <= modlow,
 					childressCond = "Minor Flooding";
 				else
 					childressCond = "Normal Conditions";
