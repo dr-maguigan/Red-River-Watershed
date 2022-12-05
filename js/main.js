@@ -45,7 +45,7 @@ function getData () {
 	});
 };
 
-var pdtfc = L.marker([34.566576613097574, -100.1963707590198], {icon: greendot}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>Current Stage: </h6><br><p>' + childressCond + '</p><br><h6>Historic Data: </h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+var pdtfc = L.marker([34.566576613097574, -100.1963707590198], {icon: childressIcon}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>Current Stage: </h6><br><p>' + childressCond + '</p><br><h6>Historic Data: </h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 			
 
