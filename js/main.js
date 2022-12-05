@@ -25,14 +25,14 @@ function getData () {
     data: $(this).serialize(),
     success: function(data) {
         ctx = (data.value.timeSeries[0].values[0].value[0].value);
-        childress = parseFloat(ctx);
+        childress = Number(ctx);
         let stage;
   		if (childress >= 14) {
     		stage = "Moderate Flooding";
   		} else {
     		stage = (childress < 10) ? "Normal Conditions" : "Minor Flooding";
-            	childressCond = stage;
   		}
+	childressCond = stage;
    	
     	}
 	});
