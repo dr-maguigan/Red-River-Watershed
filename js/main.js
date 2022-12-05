@@ -16,8 +16,7 @@ function getData () {
     data: $(this).serialize(),
     success: function(data) {
         ctx = (data.value.timeSeries[0].values[0].value[0].value);
-		ctxnum = parseInt(ctx);
-        childress = ctxnum;
+        childress = ctx;
         let stage;
   		if (childress >= 14) {
     		stage = "Moderate Flooding";
