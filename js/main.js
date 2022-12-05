@@ -21,7 +21,7 @@ var childress;
 
 var dotIcon = L.Icon.extend({
     				options: {
-        				iconSize:     [22, 22],
+        				iconSize:     [18, 18],
         				iconAnchor:   [22, 94],
        					popupAnchor:  [-67, -76]
     				}
@@ -31,28 +31,24 @@ var dotIcon = L.Icon.extend({
 			var greendot = new dotIcon({iconUrl: 'green_dot.png'})
 			
 			
-			
-			var childressCond;
+			var modlow = 14;
+			var minlow = 10;
+			let childressCond = "Normal Conditions";
 			function updateChildressCond (childress, childressCond) {
-				let modlow = 14;
-				let minlow = 10;
+				
 				if modlow <= childress,
-					childressCond = "Moderate Flooding";
+					let childressCond = "Moderate Flooding";
 				if minlow <= childress && childress <= modlow,
-					childressCond = "Minor Flooding";
-				else
-					childressCond = "Normal Conditions";
+					let childressCond = "Minor Flooding";
 				return childressCond;
 			};
 
-			var childressicon;
+			let childressicon = greendot;
 			function updateChildressCond (childress, childressicon, reddot, orangedot, greendot) {
-				if g14 <= childress,
-					childressicon = reddot;
-				if b12 <= childress && childress <= g14,
-					childressicon = orangedot;
-				else
-					childressicon = greendot;
+				if modlow <= childress,
+					let childressicon = reddot;
+				if minlow <= childress && childress <= modlow,
+					let childressicon = orangedot;
 				return childressicon;
 			};
 
