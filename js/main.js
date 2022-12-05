@@ -30,8 +30,8 @@ var dotIcon = L.Icon.extend({
 			var reddot = new dotIcon({iconUrl: 'red_dot.png'})
 			var greendot = new dotIcon({iconUrl: 'green_dot.png'})
 			
-			let g14 = 14
-			let b12 = 12
+			var g14 = 14;
+			var b12 = 12;
 			
 			var childressCond;
 			function updateChildressCond (childress, childressCond) {
