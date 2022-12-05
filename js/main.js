@@ -6,6 +6,8 @@ var map = L.map('map', {
 			
     		
 var childress;    
+var childressCond;
+function getData () {
     $.ajax({
     type: "GET",
     url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07299540&parameterCd=00065,63160&siteStatus=all",
@@ -16,8 +18,15 @@ var childress;
         ctx = (data.value.timeSeries[0].values[0].value[0].value);
 		ctxnum = parseInt(ctx);
         childress = ctxnum;
-        }
-});
+        let stage;
+  		if (childress >= 14) {
+    		stage = "Moderate Flooding";
+  		} else {
+    		stage = (childress < 10) ? "Normal Conditions" : "Minor Flooding";
+            childressCond = stage;
+  		}}
+	});
+};
 
 var dotIcon = L.Icon.extend({
     				options: {
@@ -31,19 +40,6 @@ var dotIcon = L.Icon.extend({
 			var greendot = new dotIcon({iconUrl: 'green_dot.png'})
 			
 			
-			var cmodlow = 14;
-			var cminlow = 10;
-			let childressCond = "Normal Conditions";
-			function updateChildressCond (childress, childressCond) {
-				let modlow = document.getElementById("cmodlow").value;
-				let minlow = document.getElementById("cminlow").value;
-				if childress => modlow,
-					let childressCond = "Moderate Flooding";
-				if childress >= minlow && childress <= modlow,
-					let childressCond = "Minor Flooding";
-				return childressCond;
-			};
-
 			let childressicon = greendot;
 			function updateChildressCond (childress, childressicon, reddot, orangedot, greendot) {
 				let modlow = document.getElementById("cmodlow").value;
