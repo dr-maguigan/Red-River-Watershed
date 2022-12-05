@@ -3,10 +3,20 @@ var map = L.map('map', {
 				 zoom: 6.5
 			});
 			
-			
+var dotIcon = L.Icon.extend({
+    				options: {
+        				iconSize:     [18, 18],
+        				iconAnchor:   [22, 94],
+       					popupAnchor:  [-67, -76]
+    				}
+			});
+			var orangedot = new dotIcon({iconUrl: 'orange_dot.png'})
+			var reddot = new dotIcon({iconUrl: 'red_dot.png'})
+			var greendot = new dotIcon({iconUrl: 'green_dot.png'})			
     		
 var childress;    
 var childressCond;
+var childressIcon;
 function getData () {
     $.ajax({
     type: "GET",
@@ -22,39 +32,24 @@ function getData () {
     		stage = "Moderate Flooding";
   		} else {
     		stage = (childress < 10) ? "Normal Conditions" : "Minor Flooding";
-            childressCond = stage;
-  		}}
+            	childressCond = stage;
+  		}
+   	let icon;
+	    	if (childress) => 14 {
+			icon = reddot;
+		} else {
+		icon = (childress <10) ? greendot : orangedot;
+		childressIcon = icon;
+		}
+    	}
 	});
 };
-
-var dotIcon = L.Icon.extend({
-    				options: {
-        				iconSize:     [18, 18],
-        				iconAnchor:   [22, 94],
-       					popupAnchor:  [-67, -76]
-    				}
-			});
-			var orangedot = new dotIcon({iconUrl: 'orange_dot.png'})
-			var reddot = new dotIcon({iconUrl: 'red_dot.png'})
-			var greendot = new dotIcon({iconUrl: 'green_dot.png'})
-			
-			
-			let childressicon = greendot;
-			function updateChildressCond (childress, childressicon, reddot, orangedot, greendot) {
-				let modlow = document.getElementById("cmodlow").value;
-				let minlow = document.getElementById("cminlow").value;
-				if childress => modlow,
-					let childressicon = reddot;
-				if childress >= minlow && childress <= modlow,
-					let childressicon = orangedot;
-				return childressicon;
-			};
 
 var pdtfc = L.marker([34.566576613097574, -100.1963707590198], {icon: greendot}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>Current Stage: </h6><br><p>' + childressCond + '</p><br><h6>Historic Data: </h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 			
 
-    var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     				maxZoom: 13,
    				attribution: '© OpenStreetMap'}).addTo(map);
                 	
