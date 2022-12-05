@@ -16,7 +16,7 @@ var dotIcon = L.Icon.extend({
     		
 var childress;    
 var childressCond;
-var childressIcon;
+let childressIcon;
 function getData () {
     $.ajax({
     type: "GET",
