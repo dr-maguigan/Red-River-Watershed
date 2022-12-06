@@ -95,7 +95,7 @@ var riverStyle = {
         "opacity": 0.65
     };
 
-var rivers = new L.geoJson( , {
+var rivers = new L.geoJson( '', {
 	style: riverStyle});
 rivers.addTo(map);
 
@@ -114,7 +114,7 @@ success: function(data) {
     				"weight": 1,
     				"opacity": 0.95
 			};
-			var watershed =  new L.geoJson( , {
+			var watershed =  new L.geoJson( '' , {
 				style: watershedstyle});
 			watershed.addTo(map);
 
