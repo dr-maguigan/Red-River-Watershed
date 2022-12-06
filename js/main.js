@@ -95,7 +95,7 @@ var riverStyle = {
         "opacity": 0.85
     };
 
-var rivers = new L.GeoJSON.AJAX("RR_Tribs_Merge.json", {
+var rivers = new L.GeoJSON.AJAX("Rivers.geojson", {
 	style: riverStyle}); 
 
 rivers.addTo(map);
