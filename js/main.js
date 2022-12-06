@@ -92,7 +92,7 @@ L.geoJSON(waysidegeoJSON,  {
 var riverStyle = {
         "color": "#A6D4FF",
         "weight": 2,
-        "opacity": 0.85
+        "opacity": 0.45
     };
 
 var rivers = new L.geoJson();
