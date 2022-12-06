@@ -26,16 +26,29 @@ var childress;
         childress = Number(ctx);
     }
     });
-console.log(childress);	    
-var childressgeoJSON;
-var childresslatlng = [34.566576613097574, -100.1963707590198];
+
+var childressgeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -100.1963707590198, 
+          34.566576613097574
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
 var childressCond;
 	   
 L.geoJSON(childressgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (childress >= 14) return L.marker(childresslatlng, {icon:reddot}, {childressCond: "Moderate Flooding"});
-	    	else if (childress >= 10 && childress < 14) return L.marker(childresslatlng, {icon:orangedot}, {childressCond: "Minor Flooding"});
-	    	else return L.marker(childresslatlng, {icon:greendot}, {childressCond: "Normal Conditions"});
+		if (childress >= 14) return L.marker(latlng, {icon:reddot}, {childressCond: "Moderate Flooding"});
+	    	else if (childress >= 10 && childress < 14) return L.marker(latlng, {icon:orangedot}, {childressCond: "Minor Flooding"});
+	    	else return L.marker(latlng, {icon:greendot}, {childressCond: "Normal Conditions"});
 		childressgeoJSON.bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>Current Stage: </h6><br><p>' + childressgeoJSON.childressCond + '</p><br><h6>Historic Data: </h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "Childress.PNG"</a>', {maxWidth: "200px"});
 	}
 }).addTo(map);
