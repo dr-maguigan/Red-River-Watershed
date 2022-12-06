@@ -101,7 +101,7 @@ var shreveport;
     }
     });
 
-var shrevportgeoJSON = {
+var shreveportgeoJSON = {
   "type": "FeatureCollection",
   "features": [
     {
