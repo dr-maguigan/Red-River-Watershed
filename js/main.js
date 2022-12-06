@@ -17,7 +17,7 @@ var dotIcon = L.Icon.extend({
 var childress;    
     $.ajax({
     type: "GET",
-    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07299540&parameterCd=00065,63160&siteStatus=all",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07299540&parameterCd=00065&siteStatus=all",
     dataType: 'json',
     async: false,
     data: $(this).serialize(),
@@ -42,7 +42,6 @@ var childressgeoJSON = {
     }
   ]
 };
-var childressCond;
 	   
 L.geoJSON(childressgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
@@ -51,6 +50,43 @@ L.geoJSON(childressgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>Historic Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+	
+var wayside;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07297910&parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        wtx = (data.value.timeSeries[0].values[0].value[0].value);
+        wayside = Number(wtx);
+    }
+    });
+
+var waysidegeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -101.4140578, 
+          34.83755505
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+	   
+L.geoJSON(waysidegeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (wayside >= 15) return L.marker(latlng, {icon:reddot});
+	    	else if (childress >= 10 && childress < 15) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Wayside, TX</p><br><h6>Current height: </h6><p>' + wayside + ' ft<p><br><h6>Historic Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Wayside.html"><img src= "Wayside.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 	
 
 
