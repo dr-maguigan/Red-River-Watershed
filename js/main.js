@@ -34,8 +34,8 @@ var childressCond;
 	   
 L.geoJSON(childressgeoJSON,  {
 	    pointToLayer: function (feature, latlng) {
-	    if (childress >= 14), return L.marker(childresslatlng, {icon:reddot}, {childressCond = "Moderate Flooding"};
-	    else if (childress >= 10 && childress < 14), return L.marker(childresslatlng, {icon:orangedot}, {childressCond = "Minor Flooding"};
+	    if (childress >= 14) return L.marker(childresslatlng, {icon:reddot}, {childressCond = "Moderate Flooding"};
+	    else if (childress >= 10 && childress < 14) return L.marker(childresslatlng, {icon:orangedot}, {childressCond = "Minor Flooding"};
 	    else return L.marker(childresslatlng, {icon:greendot}, {childressCond = "Normal Conditions"};
 }).addTo(map);
 	
