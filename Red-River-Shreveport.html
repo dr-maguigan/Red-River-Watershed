@@ -71,22 +71,38 @@ const options = {
           yMax: 31.5,
           backgroundColor: 'rgb(235, 170, 80)'
         },
+	box3: {
+	  drawTime: "beforeDatasetsDraw",
+          type: 'box',
+          yMin: 33,
+          yMax: 35,
+          backgroundColor: 'rgb(42, 0, 1)'
+        },
         label1: {
           type: 'label',
-          xValue: 35,
+          xValue: 18,
           yValue: 32,
           content: ['Moderate Flooding'],
           font: {
             size: 14
             }
             },
-            label2: {
+          label2: {
           type: 'label',
-          xValue: 29,
+          xValue: 15,
           yValue: 30.5,
           content: ['Minor Flooding'],
           font: {
             size: 14
+            },
+	  label3: {
+          type: 'label',
+          xValue: 15,
+          yValue: 33.5,
+          content: ['Major Flooding'],
+          font: {
+            size: 14,
+	    color: 'white'
             }
             }
       }
