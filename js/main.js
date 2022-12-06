@@ -25,6 +25,7 @@ var childressCond;
     success: function(data) {
         ctx = (data.value.timeSeries[0].values[0].value[0].value);
         childress = Number(ctx);
+    }
     });
 	    
 var childressgeoJSON;
