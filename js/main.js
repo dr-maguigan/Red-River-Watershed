@@ -89,7 +89,16 @@ L.geoJSON(waysidegeoJSON,  {
 }).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Wayside, TX</p><br><h6>Current height: </h6><p>' + wayside + ' ft<p><br><h6>Historic Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Wayside.html"><img src= "Wayside.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 	
 
+var riverStyle = {
+        "color": "#A6D4FF",
+        "weight": 2,
+        "opacity": 0.85
+    };
 
+var rivers = new L.GeoJSON.AJAX("RR_Tribs_Merge.json", {
+	style: riverStyle}); 
+
+rivers.addTo(map);
 
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     				maxZoom: 13,
