@@ -27,7 +27,7 @@ var childressCond;
         childress = Number(ctx);
     }
     });
-	    
+console.log(childress);	    
 var childressgeoJSON;
 var childresslatlng = [34.566576613097574, -100.1963707590198];
 var childressCond;
