@@ -70,3 +70,20 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			L.geoJSON(watershed, {
     				style: geojsonstyle
 			}).addTo(map);
+
+var legend = L.control({ position: "bottomleft" });
+
+legend.onAdd = function(map) {
+  var div = L.DomUtil.create("div", "legend");
+  div.innerHTML += "<h4>Stage</h4>";
+  div.innerHTML += '<i class="icon1"></i><span>Normal Conditions</span><br>';
+  div.innerHTML += '<i class="icon2"></i><span>Minor Flooding</span><br>';
+  div.innerHTML += '<i class="icon3"></i><span>Moderate Flooding</span><br>';
+ 
+  
+  
+
+  return div;
+};
+
+legend.addTo(map);
