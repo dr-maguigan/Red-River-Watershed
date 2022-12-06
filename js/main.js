@@ -88,7 +88,43 @@ L.geoJSON(waysidegeoJSON,  {
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Wayside, TX</p><br><h6>Current height: </h6><p>' + wayside + ' ft<p><br><h6>Historic Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Wayside.html"><img src= "Wayside.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 	
+var shreveport;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07348500&parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        sla = (data.value.timeSeries[0].values[0].value[0].value);
+        shreveport = Number(sla);
+    }
+    });
 
+var shrevportgeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -93.7404565, 
+          32.5154297
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+	   
+L.geoJSON(shreveportgeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (shreveport >= 31.5) return L.marker(latlng, {icon:reddot});
+	    	else if (shreveport >= 30 && shreveport < 31.5) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River near Shreveport, LA</p><br><h6>Current height: </h6><p>' + shreveport + ' ft<p><br><h6>Historic Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Shreveport.html"><img src= "Shreveport.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+	
 var riverStyle = {
         "color": "#A6D4FF",
         "weight": 2,
