@@ -109,24 +109,24 @@ success: function(data) {
 }
 }).error(function() {});
                 	
-			var watershedstyle = {
-    				"color": "#8a8c89",
-    				"weight": 1,
-    				"opacity": 0.95
-			};
-			var watershed =  new L.geoJson( '' , {
-				style: watershedstyle});
-			watershed.addTo(map);
+var watershedstyle = {
+	"color": "#8a8c89",
+    	"weight": 1,
+    	"opacity": 0.95
+	};
+var watershed =  new L.geoJson( '' , {
+	style: watershedstyle});
+watershed.addTo(map);
 
-			$.ajax({
-				dataType: "json",
-				url: "RRWB.geojson",
-				success: function(data) {
-    					$(data.features).each(function(key, data) {
-        					watershed.addData(data);
-    					});
-				}
-			}).error(function() {});
+$.ajax({
+	dataType: "json",
+	url: "RRWB.geojson",
+	success: function(data) {
+		$(data.features).each(function(key, data) {
+			watershed.addData(data);
+			});
+		}
+}).error(function() {});
 
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     				maxZoom: 13,
