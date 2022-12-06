@@ -172,14 +172,11 @@ var legend = L.control({ position: "bottomleft" });
 
 legend.onAdd = function(map) {
   var div = L.DomUtil.create("div", "legend");
-  div.innerHTML += "<h5>Stage</h5>";
+  div.innerHTML += "<h5><b>Stage</b></h5>";
   div.innerHTML += '<i class="icon1"></i><span>Normal Conditions</span><br>';
   div.innerHTML += '<i class="icon2"></i><span>Minor Flooding</span><br>';
-  div.innerHTML += '<i class="icon3"></i><span>Moderate Flooding</span><br>';
+  div.innerHTML += '<i class="icon3"></i><span>Moderate Flooding</span>';
  
-  
-  
-
   return div;
 };
 
