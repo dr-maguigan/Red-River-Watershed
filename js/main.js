@@ -123,7 +123,7 @@ L.geoJSON(shreveportgeoJSON,  {
 	    	else if (shreveport >= 30 && shreveport < 31.5) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
-}).bindPopup('<h6>Station Name:</h6><br><p>Red River near Shreveport, LA</p><br><h6>Current height: </h6><p>' + shreveport + ' ft<p><br><h6>Historic Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Shreveport.html"><img src= "Shreveport.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Shreveport, LA</p><br><h6>Current height: </h6><p>' + shreveport + ' ft<p><br><h6>Historic Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Shreveport.html"><img src= "Shreveport.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 	
 var riverStyle = {
         "color": "#A6D4FF",
