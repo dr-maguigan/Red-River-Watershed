@@ -25,8 +25,8 @@ function getData () {
     data: $(this).serialize(),
     success: function(data) {
         ctx = (data.value.timeSeries[0].values[0].value[0].value);
-        childress = Number(ctx);
-	console.log(childress);
+        let ctxnum = Number(ctx);
+	childress = ctxnum;
         let stage;
   		if (childress >= 14) {
     		stage = "Moderate Flooding";
@@ -34,7 +34,6 @@ function getData () {
     		stage = (childress < 10) ? "Normal Conditions" : "Minor Flooding";
   		}
 	childressCond = stage;
-	console.log(childressCond);
    	
     	}
 	});
