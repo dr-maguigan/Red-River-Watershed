@@ -137,7 +137,7 @@ rivers.addTo(map);
 
 $.ajax({
 dataType: "json",
-url: "Rivers.geojson",
+url: "data/Rivers.geojson",
 success: function(data) {
     $(data.features).each(function(key, data) {
         rivers.addData(data);
@@ -156,7 +156,7 @@ watershed.addTo(map);
 
 $.ajax({
 	dataType: "json",
-	url: "RRWB.geojson",
+	url: "data/RRWB.geojson",
 	success: function(data) {
 		$(data.features).each(function(key, data) {
 			watershed.addData(data);
