@@ -10,9 +10,9 @@ var dotIcon = L.Icon.extend({
        					popupAnchor:  [0, 80]
     				}
 			});
-			var orangedot = new dotIcon({iconUrl: 'orange_dot.png'})
-			var reddot = new dotIcon({iconUrl: 'red_dot.png'})
-			var greendot = new dotIcon({iconUrl: 'green_dot.png'})			
+			var orangedot = new dotIcon({iconUrl: 'img/orange_dot.png'})
+			var reddot = new dotIcon({iconUrl: 'img/red_dot.png'})
+			var greendot = new dotIcon({iconUrl: 'img/green_dot.png'})			
     		
 var childress;    
     $.ajax({
