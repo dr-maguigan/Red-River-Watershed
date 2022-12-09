@@ -220,7 +220,7 @@ success: function(data) {
 }).error(function() {});
                 	
 var watershedstyle = {
-	"color": "#8a8c89",
+	"color": "#C4A484",
     	"weight": 1,
     	"opacity": 0.95
 	};
