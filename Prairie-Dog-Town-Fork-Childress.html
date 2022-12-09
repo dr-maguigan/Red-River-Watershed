@@ -25,6 +25,12 @@
 	 font-family: Oswald;
 	 color: white;}
 	
+	a:hover {
+  	color: #168D29;
+	}
+	
+	.heading {text-align: center;}
+	
 #myChart {
 	background-color: white;
 	max-width: 85%;
@@ -35,8 +41,10 @@
 </style>
 </head>
 <body>
-  <h1>Prairie Dog Town Fork of the Red River near Childress, TX</h1>
-	<h2>2022 River Levels</h2>
+	<div class = "heading">
+  		<h1>Prairie Dog Town Fork of the Red River near Childress, TX</h1>
+		<h2>2022 River Levels</h2>
+		<a href = "https://waterdata.usgs.gov/monitoring-location/07299540/#parameterCode=00065&period=P7D">For more information, please visit the USGS</a>
  <canvas id="myChart"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js"></script>
@@ -124,6 +132,5 @@ new Chart("myChart", {
 });
 
 </script>
-<a href = "https://waterdata.usgs.gov/monitoring-location/07299540/#parameterCode=00065&period=P7D">For more information, please visit the USGS</a>
 </body>
 </html>
