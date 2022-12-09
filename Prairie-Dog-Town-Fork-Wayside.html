@@ -25,6 +25,8 @@
 	 font-family: Oswald;
 	 color: white;}
 	
+	.heading {text-align: center;}
+	
 #myChart {
 	background-color: white;
 	max-width: 85%;
@@ -35,8 +37,11 @@
 </style>
 </head>
 <body>
-  <h1>Prairie Dog Town Fork of the Red River near Wayside, TX</h1>
-	<h2>2022 River Levels</h2>
+	<div class = "heading">
+  		<h1>Prairie Dog Town Fork of the Red River near Wayside, TX</h1>
+		<h2>2022 River Levels</h2>
+		<a href = "https://waterdata.usgs.gov/monitoring-location/07297910/#parameterCode=00065&period=P7D">For more information, please visit the USGS</a>
+	</div>
  <canvas id="myChart"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js"></script>
@@ -78,7 +83,7 @@ const options = {
         },
         label1: {
           type: 'label',
-          xValue: 35,
+          xValue: 34,
           yValue: 15.5,
           content: ['Moderate Flooding'],
           font: {
@@ -123,6 +128,5 @@ new Chart("myChart", {
 });
 
 </script>
-	<a href = "https://waterdata.usgs.gov/monitoring-location/07297910/#parameterCode=00065&period=P7D">For more information, please visit the USGS</a>
 </body>
 </html>
