@@ -49,7 +49,7 @@ L.geoJSON(childressgeoJSON,  {
 	    	else if (childress >= 10 && childress < 14) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
-}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>Historic Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "img/Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "img/Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 	
 var wayside;    
     $.ajax({
@@ -86,7 +86,44 @@ L.geoJSON(waysidegeoJSON,  {
 	    	else if (childress >= 10 && childress < 15) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
-}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Wayside, TX</p><br><h6>Current height: </h6><p>' + wayside + ' ft<p><br><h6>Historic Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Wayside.html"><img src= "img/Wayside.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Wayside, TX</p><br><h6>Current height: </h6><p>' + wayside + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Wayside.html"><img src= "img/Wayside.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+
+var burk;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07308500&parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        btx = (data.value.timeSeries[0].values[0].value[0].value);
+        burk = Number(btx);
+    }
+    });
+
+var burkgeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -98.5317234, 
+          34.11009327
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+	   
+L.geoJSON(burkgeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (burk >= 12) return L.marker(latlng, {icon:reddot});
+	    	else if (burk >= 9 && childress < 12) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River near Burkburnett, TX</p><br><h6>Current height: </h6><p>' + burk + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Burkburnett.html"><img src= "img/Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 	
 var shreveport;    
     $.ajax({
@@ -123,7 +160,7 @@ L.geoJSON(shreveportgeoJSON,  {
 	    	else if (shreveport >= 30 && shreveport < 31.5) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
-}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Shreveport, LA</p><br><h6>Current height: </h6><p>' + shreveport + ' ft<p><br><h6>Historic Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Shreveport.html"><img src= "img/Shreveport.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Shreveport, LA</p><br><h6>Current height: </h6><p>' + shreveport + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Shreveport.html"><img src= "img/Shreveport.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 	
 var riverStyle = {
         "color": "#A6D4FF",
