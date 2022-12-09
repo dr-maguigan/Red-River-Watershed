@@ -5,7 +5,7 @@ var map = L.map('map', {
 			
 var dotIcon = L.Icon.extend({
     				options: {
-        				iconSize:     [18, 18],
+        				iconSize:     [14, 14],
         				iconAnchor:   [0, 0],
        					popupAnchor:  [0, 80]
     				}
