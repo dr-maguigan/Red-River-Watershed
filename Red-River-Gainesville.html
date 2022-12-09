@@ -84,10 +84,17 @@
           			yMin: 25,
           			yMax: 28,
           			backgroundColor: 'rgb(235, 170, 80)'
+			},
+			box3: {
+	  			drawTime: "beforeDatasetsDraw",
+          			type: 'box',
+          			yMin: 33,
+          			yMax: 35,
+          			backgroundColor: 'rgb(42, 0, 1)'
         		},
         		label1: {
           			type: 'label',
-          			xValue: 34,
+          			xValue: 33,
          			yValue: 28.5,
           			content: ['Moderate Flooding'],
           			font: {
@@ -102,12 +109,21 @@
           			font: {
             			size: 14
             			}
-            		}
-      			}
+            		},
+	  		label3: {
+          			type: 'label',
+          			xValue: 13,
+          			yValue: 34.5,
+          			content: ['Major Flooding'],
+	  			color: 'rgb(255, 255, 255)',
+          			font: {
+            				size: 14
+          			}
+          		}
+      		}
     		}
-  		}
-		};
-
+  	}
+	};
 		new Chart("myChart", {
 			data: {
 				datasets: [{
