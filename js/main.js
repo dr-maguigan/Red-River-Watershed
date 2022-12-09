@@ -124,6 +124,43 @@ L.geoJSON(burkgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River near Burkburnett, TX</p><br><h6>Current height: </h6><p>' + burk + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Burkburnett.html"><img src= "img/Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+
+var gaines;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07316000&parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        gtx = (data.value.timeSeries[0].values[0].value[0].value);
+        gaines = Number(gtx);
+    }
+    });
+
+var gainesgeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -97.1600129, 
+          33.7278833
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+	   
+L.geoJSON(gainesgeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (burk >= 28) return L.marker(latlng, {icon:reddot});
+	    	else if (burk >= 25 && childress < 28) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River near Gainesville, TX</p><br><h6>Current height: </h6><p>' + gaines + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Gainesville.html"><img src= "img/Gainesville.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 	
 var shreveport;    
     $.ajax({
