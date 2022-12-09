@@ -161,7 +161,44 @@ L.geoJSON(gainesgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River near Gainesville, TX</p><br><h6>Current height: </h6><p>' + gaines + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Gainesville.html"><img src= "img/Gainesville.PNG"</a>', {maxWidth: "200px"}).addTo(map);
-	
+
+var dickson;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07331000&parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        dok = (data.value.timeSeries[0].values[0].value[0].value);
+        dickson = Number(dok);
+    }
+    });
+
+var dicksongeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -96.9758447, 
+          34.23342725
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+	   
+L.geoJSON(dicksongeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (dickson >= 29) return L.marker(latlng, {icon:reddot});
+	    	else if (burk >= 27 && childress < 298) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+}).bindPopup('<h6>Station Name:</h6><br><p>Washita River near Dickson, OK</p><br><h6>Current height: </h6><p>' + dickson + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Dickson.html"><img src= "img/Dickson.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+
 var shreveport;    
     $.ajax({
     type: "GET",
