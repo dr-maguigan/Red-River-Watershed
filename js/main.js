@@ -410,6 +410,3 @@ legend.onAdd = function(map) {
 
 //add legend to map
 legend.addTo(map);
-
-//add radar to map
-L.control.radar({}).addTo(map);
