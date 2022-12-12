@@ -129,30 +129,30 @@
 	  							color: 'rgb(255, 255, 255)',
           							font: {
             								size: 14
+          							}
           						}
-          					}
-      					}
-   				}
-  			}
-		};
+      						}
+   					}
+  				}
+			};
 		
-		//add graph with line graph for gage levels
-		new Chart("myChart", {
-			data: {
-				datasets: [{
-	    				type: "line",
-	    				label: "Gage Height",
-      					fill: false,
-      					lineTension: 0,
-      					backgroundColor: "rgba(166, 212, 255,1.0)",
-      					borderColor: "rgba(0, 0, 255,0.1)",
-      					data: yValues
-    				}],
-            		labels: xValues
-			},
-  			options: options
-		});
+			//add graph with line graph for gage levels
+			new Chart("myChart", {
+				data: {
+					datasets: [{
+	    					type: "line",
+	    					label: "Gage Height",
+      						fill: false,
+      						lineTension: 0,
+      						backgroundColor: "rgba(166, 212, 255,1.0)",
+      						borderColor: "rgba(0, 0, 255,0.1)",
+      						data: yValues
+    					}],
+            			labels: xValues
+				},
+  				options: options
+			});
 
-	</script>
+		</script>
 </body>
 </html>
