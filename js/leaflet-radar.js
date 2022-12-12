@@ -1,3 +1,4 @@
+//source: https://github.com/rwev/leaflet-radar
 // TODO add refresh (reload time layers)
 // TODO add buffer time to load layers where radar turned on
 
