@@ -335,17 +335,20 @@ L.geoJSON(coushgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River at Coushatta, LA</p><br><h6>Current height: </h6><p>' + coush + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Shreveport.html"><img src= "img/Coushatta.PNG"</a>', {maxWidth: "200px"}).addTo(map);
-	
+
+//create and define rivers display properties
 var riverStyle = {
         "color": "#A6D4FF",
         "weight": 2,
         "opacity": 0.65
     };
 
+//create rivers geojson with styling and add to map
 var rivers = new L.geoJson( '', {
 	style: riverStyle});
 rivers.addTo(map);
 
+//define rivers geojson data from file
 $.ajax({
 dataType: "json",
 url: "data/Rivers.geojson",
@@ -355,16 +358,20 @@ success: function(data) {
     });
 }
 }).error(function() {});
-                	
+
+//create and define watershed display properties
 var watershedstyle = {
 	"color": "#C4A484",
     	"weight": 1,
     	"opacity": 0.95
 	};
+
+//create watershed geojson with styling and add to map
 var watershed =  new L.geoJson( '' , {
 	style: watershedstyle});
 watershed.addTo(map);
 
+//define watershed geojson from file
 $.ajax({
 	dataType: "json",
 	url: "data/RRWB.geojson",
@@ -375,12 +382,15 @@ $.ajax({
 		}
 }).error(function() {});
 
+//add openstreetmaps tile layer to map
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     				maxZoom: 13,
    				attribution: '© OpenStreetMap'}).addTo(map);
 
+//create legend control
 var legend = L.control({ position: "bottomleft" });
 
+//define legend properties on add
 legend.onAdd = function(map) {
   var div = L.DomUtil.create("div", "legend");
   div.innerHTML += "<h5><b>Stage</b></h5>";
@@ -391,4 +401,5 @@ legend.onAdd = function(map) {
   return div;
 };
 
+//add legend to map
 legend.addTo(map);
