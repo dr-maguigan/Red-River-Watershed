@@ -1,19 +1,22 @@
+//add map centered on center of watershed
 var map = L.map('map', {
 				 center: [33.518778, -98.15738],
 				 zoom: 6.5
 			});
-			
+
+//create icon for river gages with options for green, yellow, and orange
 var dotIcon = L.Icon.extend({
     				options: {
         				iconSize:     [14, 14],
         				iconAnchor:   [0, 0],
-       					popupAnchor:  [0, 80]
+       					popupAnchor:  [0, -80]
     				}
 			});
 			var orangedot = new dotIcon({iconUrl: 'img/orange_dot.png'})
 			var reddot = new dotIcon({iconUrl: 'img/red_dot.png'})
-			var greendot = new dotIcon({iconUrl: 'img/green_dot.png'})			
-    		
+			var greendot = new dotIcon({iconUrl: 'img/green_dot.png'})
+			
+//create global childress variable and retrieve information, assign it to childress   		
 var childress;    
     $.ajax({
     type: "GET",
@@ -27,6 +30,7 @@ var childress;
     }
     });
 
+//create childress geojson
 var childressgeoJSON = {
   "type": "FeatureCollection",
   "features": [
@@ -42,7 +46,8 @@ var childressgeoJSON = {
     }
   ]
 };
-	   
+
+//add childress geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(childressgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
 		if (childress >= 14) return L.marker(latlng, {icon:reddot});
@@ -50,7 +55,8 @@ L.geoJSON(childressgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "img/Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
-	
+			
+//create global wayside variable and retrieve information, assign it to wayside	
 var wayside;    
     $.ajax({
     type: "GET",
@@ -64,6 +70,7 @@ var wayside;
     }
     });
 
+//create wayside geojson
 var waysidegeoJSON = {
   "type": "FeatureCollection",
   "features": [
@@ -79,7 +86,8 @@ var waysidegeoJSON = {
     }
   ]
 };
-	   
+
+//add wayside geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(waysidegeoJSON,  {
 	pointToLayer: function (feature, latlng) {
 		if (wayside >= 15) return L.marker(latlng, {icon:reddot});
@@ -87,7 +95,8 @@ L.geoJSON(waysidegeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Wayside, TX</p><br><h6>Current height: </h6><p>' + wayside + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Wayside.html"><img src= "img/Wayside.PNG"</a>', {maxWidth: "200px"}).addTo(map);
-
+			
+//create global burk variable and retrieve information, assign it to burk
 var burk;    
     $.ajax({
     type: "GET",
@@ -101,6 +110,7 @@ var burk;
     }
     });
 
+//create burk geojson
 var burkgeoJSON = {
   "type": "FeatureCollection",
   "features": [
@@ -116,7 +126,8 @@ var burkgeoJSON = {
     }
   ]
 };
-	   
+
+//add burk geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(burkgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
 		if (burk >= 12) return L.marker(latlng, {icon:reddot});
@@ -124,7 +135,8 @@ L.geoJSON(burkgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River near Burkburnett, TX</p><br><h6>Current height: </h6><p>' + burk + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Burkburnett.html"><img src= "img/Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
-
+			
+//create global gaines variable and retrieve information, assign it to gaines
 var gaines;    
     $.ajax({
     type: "GET",
@@ -138,6 +150,7 @@ var gaines;
     }
     });
 
+//create gaines geojson
 var gainesgeoJSON = {
   "type": "FeatureCollection",
   "features": [
@@ -153,7 +166,8 @@ var gainesgeoJSON = {
     }
   ]
 };
-	   
+
+//add gaines geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(gainesgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
 		if (gaines >= 28) return L.marker(latlng, {icon:reddot});
@@ -161,7 +175,8 @@ L.geoJSON(gainesgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River near Gainesville, TX</p><br><h6>Current height: </h6><p>' + gaines + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Gainesville.html"><img src= "img/Gainesville.PNG"</a>', {maxWidth: "200px"}).addTo(map);
-
+			
+//create global dickson variable and retrieve information, assign it to dickson
 var dickson;    
     $.ajax({
     type: "GET",
@@ -175,6 +190,7 @@ var dickson;
     }
     });
 
+//create dickson geojson
 var dicksongeoJSON = {
   "type": "FeatureCollection",
   "features": [
@@ -190,7 +206,8 @@ var dicksongeoJSON = {
     }
   ]
 };
-	   
+
+//add dickson geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(dicksongeoJSON,  {
 	pointToLayer: function (feature, latlng) {
 		if (dickson >= 29) return L.marker(latlng, {icon:reddot});
@@ -198,7 +215,8 @@ L.geoJSON(dicksongeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Washita River near Dickson, OK</p><br><h6>Current height: </h6><p>' + dickson + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Dickson.html"><img src= "img/Dickson.PNG"</a>', {maxWidth: "200px"}).addTo(map);
-
+			
+//create global indar variable and retrieve information, assign it to indar
 var indar;    
     $.ajax({
     type: "GET",
@@ -212,6 +230,7 @@ var indar;
     }
     });
 
+//create indar geojson
 var indargeoJSON = {
   "type": "FeatureCollection",
   "features": [
@@ -227,7 +246,8 @@ var indargeoJSON = {
     }
   ]
 };
-	   
+
+//add indar geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(indargeoJSON,  {
 	pointToLayer: function (feature, latlng) {
 		if (indar >= 26) return L.marker(latlng, {icon:reddot});
@@ -235,7 +255,8 @@ L.geoJSON(indargeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River at Index, AR</p><br><h6>Current height: </h6><p>' + indar + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Index.html"><img src= "img/Index.PNG"</a>', {maxWidth: "200px"}).addTo(map);
-	
+			
+//create global shreveport variable and retrieve information, assign it to shreveport	
 var shreveport;    
     $.ajax({
     type: "GET",
@@ -249,6 +270,7 @@ var shreveport;
     }
     });
 
+//create shreveport geojson
 var shreveportgeoJSON = {
   "type": "FeatureCollection",
   "features": [
@@ -264,7 +286,8 @@ var shreveportgeoJSON = {
     }
   ]
 };
-	   
+
+//add shreveport geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(shreveportgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
 		if (shreveport >= 31.5) return L.marker(latlng, {icon:reddot});
@@ -272,7 +295,8 @@ L.geoJSON(shreveportgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River at Shreveport, LA</p><br><h6>Current height: </h6><p>' + shreveport + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Shreveport.html"><img src= "img/Shreveport.PNG"</a>', {maxWidth: "200px"}).addTo(map);
-	
+			
+//create global coush variable and retrieve information, assign it to coush	
 var coush;    
     $.ajax({
     type: "GET",
@@ -286,6 +310,7 @@ var coush;
     }
     });
 
+//create coush geojson
 var coushgeoJSON = {
   "type": "FeatureCollection",
   "features": [
@@ -301,7 +326,8 @@ var coushgeoJSON = {
     }
   ]
 };
-	   
+
+//add coush geojson to map with flood stage cutoffs using different icons and a popup containing the information	   
 L.geoJSON(coushgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
 		if (coush >= 33) return L.marker(latlng, {icon:reddot});
