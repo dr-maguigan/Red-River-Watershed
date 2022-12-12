@@ -55,7 +55,7 @@ L.geoJSON(childressgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html"><img src= "img/Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html" target="_blank" rel="noopener noreferrer"><img src= "img/Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 			
 //create global wayside variable and retrieve information, assign it to wayside	
 var wayside;    
@@ -96,7 +96,7 @@ L.geoJSON(waysidegeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Wayside, TX</p><br><h6>Current height: </h6><p>' + wayside + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Wayside.html"><img src= "img/Wayside.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Wayside, TX</p><br><h6>Current height: </h6><p>' + wayside + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Wayside.html" target="_blank" rel="noopener noreferrer"><img src= "img/Wayside.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 			
 //create global burk variable and retrieve information, assign it to burk
 var burk;    
@@ -137,7 +137,7 @@ L.geoJSON(burkgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Red River near Burkburnett, TX</p><br><h6>Current height: </h6><p>' + burk + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Burkburnett.html"><img src= "img/Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River near Burkburnett, TX</p><br><h6>Current height: </h6><p>' + burk + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Burkburnett.html" target="_blank" rel="noopener noreferrer"><img src= "img/Burkburnett.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 			
 //create global gaines variable and retrieve information, assign it to gaines
 var gaines;    
@@ -177,7 +177,7 @@ L.geoJSON(gainesgeoJSON,  {
 	    	else if (gaines >= 25 && gaines < 28) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
-}).bindPopup('<h6>Station Name:</h6><br><p>Red River near Gainesville, TX</p><br><h6>Current height: </h6><p>' + gaines + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Gainesville.html"><img src= "img/Gainesville.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River near Gainesville, TX</p><br><h6>Current height: </h6><p>' + gaines + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Gainesville.html" target="_blank" rel="noopener noreferrer"><img src= "img/Gainesville.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 			
 //create global dickson variable and retrieve information, assign it to dickson
 var dickson;    
@@ -218,7 +218,7 @@ L.geoJSON(dicksongeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Washita River near Dickson, OK</p><br><h6>Current height: </h6><p>' + dickson + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Dickson.html"><img src= "img/Dickson.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Washita River near Dickson, OK</p><br><h6>Current height: </h6><p>' + dickson + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Dickson.html" target="_blank" rel="noopener noreferrer"><img src= "img/Dickson.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 			
 //create global indar variable and retrieve information, assign it to indar
 var indar;    
@@ -259,7 +259,7 @@ L.geoJSON(indargeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Index, AR</p><br><h6>Current height: </h6><p>' + indar + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Index.html"><img src= "img/Index.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Index, AR</p><br><h6>Current height: </h6><p>' + indar + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Index.html" target="_blank" rel="noopener noreferrer"><img src= "img/Index.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 			
 //create global shreveport variable and retrieve information, assign it to shreveport	
 var shreveport;    
@@ -300,7 +300,7 @@ L.geoJSON(shreveportgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Shreveport, LA</p><br><h6>Current height: </h6><p>' + shreveport + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Shreveport.html"><img src= "img/Shreveport.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Shreveport, LA</p><br><h6>Current height: </h6><p>' + shreveport + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Shreveport.html" target="_blank" rel="noopener noreferrer"><img src= "img/Shreveport.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 			
 //create global coush variable and retrieve information, assign it to coush	
 var coush;    
@@ -341,7 +341,7 @@ L.geoJSON(coushgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Coushatta, LA</p><br><h6>Current height: </h6><p>' + coush + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Coushatta.html"><img src= "img/Coushatta.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Coushatta, LA</p><br><h6>Current height: </h6><p>' + coush + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Coushatta.html" target="_blank" rel="noopener noreferrer"><img src= "img/Coushatta.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create and define rivers display properties
 var riverStyle = {
