@@ -286,7 +286,7 @@ var coush;
     }
     });
 
-var shreveportgeoJSON = {
+var coushgeoJSON = {
   "type": "FeatureCollection",
   "features": [
     {
