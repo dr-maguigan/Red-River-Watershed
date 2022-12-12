@@ -83,7 +83,7 @@ var waysidegeoJSON = {
 L.geoJSON(waysidegeoJSON,  {
 	pointToLayer: function (feature, latlng) {
 		if (wayside >= 15) return L.marker(latlng, {icon:reddot});
-	    	else if (childress >= 10 && childress < 15) return L.marker(latlng, {icon:orangedot});
+	    	else if (wayside >= 10 && wayside < 15) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Wayside, TX</p><br><h6>Current height: </h6><p>' + wayside + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Wayside.html"><img src= "img/Wayside.PNG"</a>', {maxWidth: "200px"}).addTo(map);
@@ -120,7 +120,7 @@ var burkgeoJSON = {
 L.geoJSON(burkgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
 		if (burk >= 12) return L.marker(latlng, {icon:reddot});
-	    	else if (burk >= 9 && childress < 12) return L.marker(latlng, {icon:orangedot});
+	    	else if (burk >= 9 && burk < 12) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River near Burkburnett, TX</p><br><h6>Current height: </h6><p>' + burk + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Burkburnett.html"><img src= "img/Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
@@ -156,8 +156,8 @@ var gainesgeoJSON = {
 	   
 L.geoJSON(gainesgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (burk >= 28) return L.marker(latlng, {icon:reddot});
-	    	else if (burk >= 25 && childress < 28) return L.marker(latlng, {icon:orangedot});
+		if (gaines >= 28) return L.marker(latlng, {icon:reddot});
+	    	else if (gaines >= 25 && gaines < 28) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River near Gainesville, TX</p><br><h6>Current height: </h6><p>' + gaines + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Gainesville.html"><img src= "img/Gainesville.PNG"</a>', {maxWidth: "200px"}).addTo(map);
@@ -194,11 +194,48 @@ var dicksongeoJSON = {
 L.geoJSON(dicksongeoJSON,  {
 	pointToLayer: function (feature, latlng) {
 		if (dickson >= 29) return L.marker(latlng, {icon:reddot});
-	    	else if (burk >= 27 && childress < 298) return L.marker(latlng, {icon:orangedot});
+	    	else if (dickson >= 27 && dickson < 29) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Washita River near Dickson, OK</p><br><h6>Current height: </h6><p>' + dickson + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Dickson.html"><img src= "img/Dickson.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
+var indar;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07337000&parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        iar = (data.value.timeSeries[0].values[0].value[0].value);
+        indar = Number(iar);
+    }
+    });
+
+var indargeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -94.0411111, 
+          33.55194444
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+	   
+L.geoJSON(indargeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (indar >= 26) return L.marker(latlng, {icon:reddot});
+	    	else if (indar >= 25 && indar < 26) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Index, AR</p><br><h6>Current height: </h6><p>' + indar + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Index.html"><img src= "img/Index.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+	
 var shreveport;    
     $.ajax({
     type: "GET",
@@ -235,6 +272,43 @@ L.geoJSON(shreveportgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River at Shreveport, LA</p><br><h6>Current height: </h6><p>' + shreveport + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Shreveport.html"><img src= "img/Shreveport.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+	
+var coush;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07350500&parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        cla = (data.value.timeSeries[0].values[0].value[0].value);
+        coush = Number(cla);
+    }
+    });
+
+var shreveportgeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -93.3529502, 
+          32.01266134
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+	   
+L.geoJSON(coushgeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (coush >= 33) return L.marker(latlng, {icon:reddot});
+	    	else if (coush >= 31 && coush < 33) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Coushatta, LA</p><br><h6>Current height: </h6><p>' + coush + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Shreveport.html"><img src= "img/Coushatta.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 	
 var riverStyle = {
         "color": "#A6D4FF",
