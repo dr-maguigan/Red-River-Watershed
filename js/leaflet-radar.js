@@ -25,7 +25,6 @@ L.Control.Radar = L.Control.extend({
     },
 
     onAdd: function (map) {
-        this.map = map;
 
         // setup control container
         this.container = L.DomUtil.create(`div`, "leaflet-radar");
