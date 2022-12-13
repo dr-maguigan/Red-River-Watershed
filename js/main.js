@@ -640,3 +640,5 @@ L.Control.Radar = L.Control.extend({
 L.control.radar = function (options) {
     return new L.Control.Radar(options);
 };
+
+L.control.radar({}).addTo(map);
