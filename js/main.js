@@ -15,6 +15,7 @@ var dotIcon = L.Icon.extend({
 			var orangedot = new dotIcon({iconUrl: 'img/orange_dot.png'})
 			var reddot = new dotIcon({iconUrl: 'img/red_dot.png'})
 			var greendot = new dotIcon({iconUrl: 'img/green_dot.png'})
+			var maroondot = new dotIcon({iconUrl: 'img/maroon_dot.png'})
 			
 //create global childress variable and retrieve information, assign it to childress   		
 var childress;    
@@ -173,7 +174,8 @@ var gainesgeoJSON = {
 //add gaines geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(gainesgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (gaines >= 28) return L.marker(latlng, {icon:reddot});
+		if (gaines >= 34) return L.marker(latlng, {icon:maroondot});
+		else if (gaines >=28 && gaines <34) return L.marker(latlng, {icon:reddot});
 	    	else if (gaines >= 25 && gaines < 28) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
@@ -213,7 +215,8 @@ var dicksongeoJSON = {
 //add dickson geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(dicksongeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (dickson >= 29) return L.marker(latlng, {icon:reddot});
+		if (dickson >= 31) return L.marker(latlng, {icon:maroondot});
+		else if (dickson >= 29 && dickson < 31) return L.marker(latlng, {icon:reddot});
 	    	else if (dickson >= 27 && dickson < 29) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
@@ -254,7 +257,8 @@ var indargeoJSON = {
 //add indar geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(indargeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (indar >= 26) return L.marker(latlng, {icon:reddot});
+		if (indar >= 28) return L.marker(latlng, {icon:maroondot});
+		else if (indar >= 26 && indar < 28) return L.marker(latlng, {icon:reddot});
 	    	else if (indar >= 25 && indar < 26) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
@@ -295,7 +299,8 @@ var shreveportgeoJSON = {
 //add shreveport geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(shreveportgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (shreveport >= 31.5) return L.marker(latlng, {icon:reddot});
+		if (shreveport >= 33) return L.marker(latlng, {icon:maroondot});
+		else if (shreveport >= 31.5 && shreveport < 33) return L.marker(latlng, {icon:reddot});
 	    	else if (shreveport >= 30 && shreveport < 31.5) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
@@ -336,7 +341,8 @@ var coushgeoJSON = {
 //add coush geojson to map with flood stage cutoffs using different icons and a popup containing the information	   
 L.geoJSON(coushgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (coush >= 33) return L.marker(latlng, {icon:reddot});
+		if (coush >= 37) return L.marker(latlng, {icon:maroondot});
+		else if (coush >= 33 && coush < 37) return L.marker(latlng, {icon:reddot});
 	    	else if (coush >= 31 && coush < 33) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
@@ -399,11 +405,12 @@ var legend = L.control({ position: "bottomleft" });
 
 //define legend properties on add
 legend.onAdd = function(map) {
-  var div = L.DomUtil.create("div", "legend");
-  div.innerHTML += "<h5><b>Stage</b></h5>";
-  div.innerHTML += '<i class="icon1"></i><span>Normal Conditions</span><br>';
-  div.innerHTML += '<i class="icon2"></i><span>Minor Flooding</span><br>';
-  div.innerHTML += '<i class="icon3"></i><span>Moderate Flooding</span>';
+	var div = L.DomUtil.create("div", "legend");
+  	div.innerHTML += "<h5><b>Stage</b></h5>";
+  	div.innerHTML += '<i class="icon1"></i><span>Normal Conditions</span><br>';
+  	div.innerHTML += '<i class="icon2"></i><span>Minor Flooding</span><br>';
+  	div.innerHTML += '<i class="icon4"></i><span>Major Flooding</span>';
+
  
   return div;
 };
