@@ -263,7 +263,7 @@ L.geoJSON(anageoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Washita River at Anadarko, OK</p><br><h6>Current height: </h6><p>' + carter + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Washita-River-Anadarko.html" target="_blank" rel="noopener noreferrer"><img src= "img/Ana.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Washita River at Anadarko, OK</p><br><h6>Current height: </h6><p>' + carter + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Anadarko.html" target="_blank" rel="noopener noreferrer"><img src= "img/Ana.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create global dickson variable and retrieve information, assign it to dickson
 var dickson;    
