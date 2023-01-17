@@ -99,6 +99,7 @@ L.geoJSON(waysidegeoJSON,  {
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Wayside, TX</p><br><h6>Current height: </h6><p>' + wayside + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Wayside.html" target="_blank" rel="noopener noreferrer"><img src= "img/Wayside.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
+//create global carter variable and retrieve information, assign it to carter	
 var carter;    
     $.ajax({
     type: "GET",
@@ -112,7 +113,7 @@ var carter;
     }
     });
 
-//create wayside geojson
+//create carter geojson
 var cartergeoJSON = {
   "type": "FeatureCollection",
   "features": [
@@ -129,7 +130,7 @@ var cartergeoJSON = {
   ]
 };
 
-//add wayside geojson to map with flood stage cutoffs using different icons and a popup containing the information
+//add carter geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(cartergeoJSON,  {
 	pointToLayer: function (feature, latlng) {
 		if (carter >= 18) return L.marker(latlng, {icon:maroondot});
@@ -221,7 +222,49 @@ L.geoJSON(gainesgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River near Gainesville, TX</p><br><h6>Current height: </h6><p>' + gaines + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Gainesville.html" target="_blank" rel="noopener noreferrer"><img src= "img/Gainesville.PNG"</a>', {maxWidth: "200px"}).addTo(map);
-			
+
+//create global ana variable and retrieve information, assign it to ana
+var ana;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07326500&parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        anaok = (data.value.timeSeries[0].values[0].value[0].value);
+        ana = Number(anaok);
+    }
+    });
+
+//create ana geojson
+var anageoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -98.2433849, 
+          35.08422846
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+
+//add ana geojson to map with flood stage cutoffs using different icons and a popup containing the information
+L.geoJSON(anageoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (ana >= 23) return L.marker(latlng, {icon:maroondot});
+		else if (ana >= 21 && ana < 23) return L.marker(latlng, {icon:reddot});
+	    	else if (ana >= 19 && ana < 21) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+//popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
+}).bindPopup('<h6>Station Name:</h6><br><p>Washita River near Anadarko, OK</p><br><h6>Current height: </h6><p>' + carter + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Washita-River-Anadarko.html" target="_blank" rel="noopener noreferrer"><img src= "img/Ana.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+
 //create global dickson variable and retrieve information, assign it to dickson
 var dickson;    
     $.ajax({
