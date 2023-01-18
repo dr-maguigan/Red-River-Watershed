@@ -712,3 +712,55 @@ legend.onAdd = function(map) {
 
 //add legend to map
 legend.addTo(map);
+
+//leaflet radar source code: https://www.eldoradoweather.com/current/misc/maproom/leaflet/leaflet.php
+//create empty radarLayers and define hour to use for nexrad images, add radarLayers to map
+var radarLayers = [];
+for(var hour = 0; hour <= 10; hour++){  
+	time = (50)-(hour * 5);
+	if (hour < 10) {
+	var layer = 'nexrad-n0q-900913-m'+time+'m'
+	radarLayers[hour] = L.tileLayer.wms("https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0q.cgi", {
+			layers: layer,
+			format: 'image/png',
+			transparent: true,
+			opacity: 0.0,
+		});
+                radarLayers[hour].addTo(map);
+
+	} 
+	if (hour == 10) {
+		var layer = 'nexrad-n0q-900913'
+		radarLayers[10] = L.tileLayer.wms("https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0q.cgi", {
+		layers: layer,
+		format: 'image/png',
+		transparent: true,
+		opacity: 0.0,
+	});
+        radarLayers[hour].addTo(map);
+	}
+}
+
+//  set the counter to 1
+var i = 0;                     
+
+//  create a loop function
+function myLoop () {           
+   setTimeout(function () {    
+     radarLayers.map(function(layer){ layer.setOpacity(0)});
+     radarLayers[i].setOpacity(0.5);
+     console.log(i);
+     i++;
+     //  if the counter < 10, call the loop function
+     if (i < 9) {            
+        myLoop();             
+     }else{
+     	i = 0;
+	myLoop();
+      }                      
+   }, 500)
+	return i;
+}
+
+//run function
+myLoop();
