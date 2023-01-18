@@ -6,9 +6,15 @@ The purpose of this site is to inform users interested in river levels within th
 The map is designed for users to interact with the map and the data available and provide references for each gage for the user to explore on their own.
 
 ### Languages
-The landing page is written in HTML, CSS, and Leaflet (Javascript API). The landing page is designed with HTML and CSS with a call to the JS script (main.js).
+The landing page is written in HTML, CSS, Leaflet, and JQuery (Javascript APIs). The landing page is designed with HTML and CSS with a call to the JS script (main.js).
 
 Each page opened by clicking the hydrograph is designed with chart.JS. Data used in the graphs come from USGS.
 
 ### Data
+#### Gage Height Data
 Data come from USGS river gage sites in an RDF format. Data were cleaned in Excel and transformed into an SQL script to import data into an SQL table. Following the import, data were analyzed for average gage height for each day of the year over the span of gage height data available (15 years in most cases). Data were also analyzed to determine the average gage height per day for 2022. 
+
+Data that are continuously updated for each river gage on the landing page come from a JQuery script that collects data from a standalone JSON managed by USGS.
+
+#### GeoJSON data
+GeoJSON data (river tributaries and the watershed boundary) come from the NHD. Data were downloaded from the NHD, cleaned using ArcPro, and converted into GeoJSONs using mapshaper. 
