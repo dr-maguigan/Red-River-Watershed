@@ -431,7 +431,7 @@ L.geoJSON(antlersgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Kiamichi River near Antlers, OK</p><br><h6>Current height: </h6><p>' + antlers + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Kiamichi-River-Antlers.html" target="_blank" rel="noopener noreferrer"><img src= "img/Dickson.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Kiamichi River near Antlers, OK</p><br><h6>Current height: </h6><p>' + antlers + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Kiamichi-River-Antlers.html" target="_blank" rel="noopener noreferrer"><img src= "img/Antlers.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 		
 //create global indar variable and retrieve information, assign it to indar
 var indar;    
