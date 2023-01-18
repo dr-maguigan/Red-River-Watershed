@@ -307,6 +307,48 @@ L.geoJSON(anageoJSON,  {
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>Washita River at Anadarko, OK</p><br><h6>Current height: </h6><p>' + ana + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Anadarko.html" target="_blank" rel="noopener noreferrer"><img src= "img/Ana.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
+//create global arthur variable and retrieve information, assign it to arthur
+var arthur;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07331000&parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        actx = (data.value.timeSeries[0].values[0].value[0].value);
+        arthur = Number(actx);
+    }
+    });
+
+//create arthur geojson
+var arthurgeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -95.5019023, 
+          33.8751049
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+
+//add arthur geojson to map with flood stage cutoffs using different icons and a popup containing the information
+L.geoJSON(arthurgeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (arthur >= 33) return L.marker(latlng, {icon:maroondot});
+		else if (arthur >= 30 && arthur < 33) return L.marker(latlng, {icon:reddot});
+	    	else if (arthur >= 27 && arthur < 30) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+//popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Arthur City, TX</p><br><h6>Current height: </h6><p>' + arthur + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Arthur-City.html" target="_blank" rel="noopener noreferrer"><img src= "img/Arthur.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+
 //create global dickson variable and retrieve information, assign it to dickson
 var dickson;    
     $.ajax({
@@ -348,7 +390,7 @@ L.geoJSON(dicksongeoJSON,  {
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>Washita River near Dickson, OK</p><br><h6>Current height: </h6><p>' + dickson + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Dickson.html" target="_blank" rel="noopener noreferrer"><img src= "img/Dickson.PNG"</a>', {maxWidth: "200px"}).addTo(map);
-			
+		
 //create global indar variable and retrieve information, assign it to indar
 var indar;    
     $.ajax({
