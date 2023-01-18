@@ -391,6 +391,48 @@ L.geoJSON(dicksongeoJSON,  {
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>Washita River near Dickson, OK</p><br><h6>Current height: </h6><p>' + dickson + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Dickson.html" target="_blank" rel="noopener noreferrer"><img src= "img/Dickson.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 		
+//create global antlers variable and retrieve information, assign it to antlers
+var antlers;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07336200&parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        antok = (data.value.timeSeries[0].values[0].value[0].value);
+        antlers = Number(antok);
+    }
+    });
+
+//create antlers geojson
+var antlersgeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -95.6052475, 
+          34.24871203
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+
+//add antlers geojson to map with flood stage cutoffs using different icons and a popup containing the information
+L.geoJSON(antlersgeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (antlers >= 35) return L.marker(latlng, {icon:maroondot});
+		else if (antlers >= 29 && antlers < 35) return L.marker(latlng, {icon:reddot});
+	    	else if (antlers >= 25 && antlers < 29) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+//popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
+}).bindPopup('<h6>Station Name:</h6><br><p>Kiamichi River near Antlers, OK</p><br><h6>Current height: </h6><p>' + antlers + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Kiamichi-River-Antlers.html" target="_blank" rel="noopener noreferrer"><img src= "img/Dickson.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+		
 //create global indar variable and retrieve information, assign it to indar
 var indar;    
     $.ajax({
