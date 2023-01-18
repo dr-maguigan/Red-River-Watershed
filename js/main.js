@@ -516,7 +516,49 @@ L.geoJSON(indargeoJSON,  {
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River at Index, AR</p><br><h6>Current height: </h6><p>' + indar + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Index.html" target="_blank" rel="noopener noreferrer"><img src= "img/Index.PNG"</a>', {maxWidth: "200px"}).addTo(map);
-			
+		
+//create global talco variable and retrieve information, assign it to talco
+var talco;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07343200&parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        taltx = (data.value.timeSeries[0].values[0].value[0].value);
+        talco = Number(taltx);
+    }
+    });
+
+//create indar geojson
+var talcogeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -95.1324428, 
+          33.3862233
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+
+//add indar geojson to map with flood stage cutoffs using different icons and a popup containing the information
+L.geoJSON(talcogeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (talco >= 27.5) return L.marker(latlng, {icon:maroondot});
+		else if (talco >= 26 && talco < 27.5) return L.marker(latlng, {icon:reddot});
+	    	else if (talco >= 20 && talco < 26) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+//popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
+}).bindPopup('<h6>Station Name:</h6><br><p>Sulphur River near Talco, TX</p><br><h6>Current height: </h6><p>' + talco + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Sulphur-River-Talco.html" target="_blank" rel="noopener noreferrer"><img src= "img/Talco.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+		
 //create global shreveport variable and retrieve information, assign it to shreveport	
 var shreveport;    
     $.ajax({
