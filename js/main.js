@@ -140,6 +140,48 @@ L.geoJSON(cartergeoJSON,  {
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>North Fork Red River near Carter, OK</p><br><h6>Current height: </h6><p>' + carter + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/North-Fork-Red-River-Carter.html" target="_blank" rel="noopener noreferrer"><img src= "img/Carter.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+
+//create global vernon variable and retrieve information, assign it to vernon	
+var vernon;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07308200&parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        vern = (data.value.timeSeries[0].values[0].value[0].value);
+        vernon = Number(vern);
+    }
+    });
+
+//create vernon geojson
+var vernongeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -99.3233333, 
+          34.1795833
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+
+//add vernon geojson to map with flood stage cutoffs using different icons and a popup containing the information
+L.geoJSON(vernongeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (vernon >= 19) return L.marker(latlng, {icon:maroondot});
+		else if (vernon >= 17 && vernon < 19) return L.marker(latlng, {icon:reddot});
+	    	else if (vernon >= 15 && vernon < 17) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+//popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
+}).bindPopup('<h6>Station Name:</h6><br><p>Pease River near Vernon, TX</p><br><h6>Current height: </h6><p>' + vernon + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Pease-River-Vernon.html" target="_blank" rel="noopener noreferrer"><img src= "img/Vernon.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 			
 //create global burk variable and retrieve information, assign it to burk
 var burk;    
@@ -263,7 +305,7 @@ L.geoJSON(anageoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Washita River at Anadarko, OK</p><br><h6>Current height: </h6><p>' + carter + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Anadarko.html" target="_blank" rel="noopener noreferrer"><img src= "img/Ana.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Washita River at Anadarko, OK</p><br><h6>Current height: </h6><p>' + ana + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Anadarko.html" target="_blank" rel="noopener noreferrer"><img src= "img/Ana.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create global dickson variable and retrieve information, assign it to dickson
 var dickson;    
