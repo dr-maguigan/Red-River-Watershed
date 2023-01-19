@@ -695,7 +695,7 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
    				attribution: '© OpenStreetMap'}).addTo(map);
 
 //create legend control
-var legend = L.control({ position: "topright" });
+var legend = L.control({ position: "bottomleft" });
 
 //define legend properties on add
 legend.onAdd = function(map) {
@@ -732,7 +732,7 @@ L.control.watermark = function(opts) {
     return new L.Control.Watermark(opts);
 }
 
-L.control.watermark({ position: 'bottomleft' }).addTo(map);
+L.control.watermark({ position: 'bottomright' }).addTo(map);
 
 //leaflet radar source code: https://www.eldoradoweather.com/current/misc/maproom/leaflet/leaflet.php
 //create empty radarLayers and define hour to use for nexrad images, add radarLayers to map
