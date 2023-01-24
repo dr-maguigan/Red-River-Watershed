@@ -719,7 +719,7 @@ L.Control.Watermark = L.Control.extend({
         				var img = L.DomUtil.create('img');
 
         				img.src = "img/text_next_to_logo.png";
-        				img.style.width = '1200px';
+        				img.style.width = '900px';
 					img.alt = "Red River Watershed Managment Institute Logo";
 
         return img;
