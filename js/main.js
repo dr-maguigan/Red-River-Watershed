@@ -720,6 +720,7 @@ L.Control.Watermark = L.Control.extend({
 
         				img.src = "img/text_next_to_logo.png";
         				img.style.width = '1200px';
+					img.alt = "Red River Watershed Managment Institute Logo";
 
         return img;
     },
@@ -732,7 +733,7 @@ L.control.watermark = function(opts) {
     return new L.Control.Watermark(opts);
 }
 
-L.control.watermark({ position: 'bottomright' }).addTo(map);
+L.control.watermark({ position: "bottomright"}).addTo(map);
 
 //leaflet radar source code: https://www.eldoradoweather.com/current/misc/maproom/leaflet/leaflet.php
 //create empty radarLayers and define hour to use for nexrad images, add radarLayers to map
