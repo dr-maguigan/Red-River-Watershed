@@ -51,7 +51,7 @@ var childressgeoJSON = {
 //add childress geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(childressgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (childress >= 14) return L.marker(latlng, {icon:reddot});
+		if (childress >= 8) return L.marker(latlng, {icon:reddot});
 	    	else if (childress >= 10 && childress < 14) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
