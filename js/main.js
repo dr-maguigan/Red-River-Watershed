@@ -1,8 +1,11 @@
 //add map centered on center of watershed
-var map = L.map('map', {
-				 center: [33.518778, -98.15738],
-				 zoom: 6.5
-			});
+var map = L.map('map');
+
+//create bounding points and bound map to those points
+var tr = L.latLng(34.84952836642389, -92.28950417754907);
+var bl = L.latLng(31.21562208125445, -102.77481382965912);
+var bounds = L.latLngBounds(tr, bl);
+map.fitBounds(bounds);
 
 //create icon for river gages with options for green, yellow, and orange
 var dotIcon = L.Icon.extend({
