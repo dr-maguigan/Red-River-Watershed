@@ -102,6 +102,49 @@ L.geoJSON(waysidegeoJSON,  {
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Wayside, TX</p><br><h6>Current height: </h6><p>' + wayside + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Wayside.html" target="_blank" rel="noopener noreferrer"><img src= "img/Wayside.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
+//create global wellington variable and retrieve information, assign it to wellington	
+var wellington;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07300000&parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        welltx = (data.value.timeSeries[0].values[0].value[0].value);
+        wellington = Number(welltx);
+    }
+    });
+
+//create wellington geojson
+var wellingtongeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -100.220949, 
+          34.95755294
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+
+//add wellington geojson to map with flood stage cutoffs using different icons and a popup containing the information
+L.geoJSON(wellingtongeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (wellington >= 13) return L.marker(latlng, {icon:maroondot});
+		else if (wellington >= 10 && wellington < 13) return L.marker(latlng, {icon:reddot});
+	    	else if (wellington >= 8 && wellington < 10) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+//popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
+}).bindPopup('<h6>Station Name:</h6><br><p>Salt Fork Red River near Wellington, OK</p><br><h6>Current height: </h6><p>' + wellington + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Salt-Fork-Red-River-Wellington.html" target="_blank" rel="noopener noreferrer"><img src= "img/Wellington.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+
+
 //create global carter variable and retrieve information, assign it to carter	
 var carter;    
     $.ajax({
@@ -268,6 +311,48 @@ L.geoJSON(gainesgeoJSON,  {
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River near Gainesville, TX</p><br><h6>Current height: </h6><p>' + gaines + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Gainesville.html" target="_blank" rel="noopener noreferrer"><img src= "img/Gainesville.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
+//create global cheyenne variable and retrieve information, assign it to cheyenne
+var cheyenne;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07316500&parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        cheyok = (data.value.timeSeries[0].values[0].value[0].value);
+        cheyenne = Number(cheyok);
+    }
+    });
+
+//create cheyenne geojson
+var cheyennegeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -99.6684386, 
+          35.62643705
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+
+//add ana geojson to map with flood stage cutoffs using different icons and a popup containing the information
+L.geoJSON(cheyennegeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (cheyenne >= 17) return L.marker(latlng, {icon:maroondot});
+		else if (cheyenne >= 15 && cheyenne < 17) return L.marker(latlng, {icon:reddot});
+	    	else if (cheyenne >= 13.5 && cheyenne < 15) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+//popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
+}).bindPopup('<h6>Station Name:</h6><br><p>Washita River near Cheyenne, OK</p><br><h6>Current height: </h6><p>' + cheyenne + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Cheyenne.html" target="_blank" rel="noopener noreferrer"><img src= "img/Cheyenne.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+
 //create global ana variable and retrieve information, assign it to ana
 var ana;    
     $.ajax({
@@ -352,6 +437,48 @@ L.geoJSON(arthurgeoJSON,  {
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River at Arthur City, TX</p><br><h6>Current height: </h6><p>' + arthur + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Arthur-City.html" target="_blank" rel="noopener noreferrer"><img src= "img/Arthur.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
+//create global dekalb variable and retrieve information, assign it to dekalb
+var dekalb;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07336820&parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        dktx = (data.value.timeSeries[0].values[0].value[0].value);
+        dekalb = Number(dktx);
+    }
+    });
+
+//create dekalb geojson
+var dekalbgeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -94.6943774, 
+          33.68400005
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+
+//add arthur geojson to map with flood stage cutoffs using different icons and a popup containing the information
+L.geoJSON(dekalbgeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (dekalb >= 30) return L.marker(latlng, {icon:maroondot});
+		else if (dekalb >= 27 && dekalb < 30) return L.marker(latlng, {icon:reddot});
+	    	else if (dekalb >= 24 && dekalb < 27) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+//popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River near De Kalb, TX</p><br><h6>Current height: </h6><p>' + dekalb + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-DeKalb.html" target="_blank" rel="noopener noreferrer"><img src= "img/DeKalb.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+
 //create global dickson variable and retrieve information, assign it to dickson
 var dickson;    
     $.ajax({
@@ -393,7 +520,49 @@ L.geoJSON(dicksongeoJSON,  {
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>Washita River near Dickson, OK</p><br><h6>Current height: </h6><p>' + dickson + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Dickson.html" target="_blank" rel="noopener noreferrer"><img src= "img/Dickson.PNG"</a>', {maxWidth: "200px"}).addTo(map);
-		
+
+//create global clayton variable and retrieve information, assign it to clayton
+var clayton;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07335790 &parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        clayok = (data.value.timeSeries[0].values[0].value[0].value);
+        clayton = Number(clayok);
+    }
+    });
+
+//create clayton geojson
+var claytongeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -95.3408025, 
+          34.5748229
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+
+//add antlers geojson to map with flood stage cutoffs using different icons and a popup containing the information
+L.geoJSON(claytongeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (clayton >= 21) return L.marker(latlng, {icon:maroondot});
+		else if (clayton >= 19 && clayton < 21) return L.marker(latlng, {icon:reddot});
+	    	else if (clayton >= 17 && clayton < 19) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+//popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
+}).bindPopup('<h6>Station Name:</h6><br><p>Kiamichi River near Clayton, OK</p><br><h6>Current height: </h6><p>' + clayton + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Kiamichi-River-Clayton.html" target="_blank" rel="noopener noreferrer"><img src= "img/Clayton.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+
 //create global antlers variable and retrieve information, assign it to antlers
 var antlers;    
     $.ajax({
@@ -519,7 +688,49 @@ L.geoJSON(indargeoJSON,  {
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River at Index, AR</p><br><h6>Current height: </h6><p>' + indar + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Index.html" target="_blank" rel="noopener noreferrer"><img src= "img/Index.PNG"</a>', {maxWidth: "200px"}).addTo(map);
-		
+
+//create global sb variable and retrieve information, assign it to sb
+var sb;    
+    $.ajax({
+    type: "GET",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07344370 &parameterCd=00065&siteStatus=all",
+    dataType: 'json',
+    async: false,
+    data: $(this).serialize(),
+    success: function(data) {
+        sbar = (data.value.timeSeries[0].values[0].value[0].value);
+        sb = Number(sbar);
+    }
+    });
+
+//create sb geojson
+var sbgeoJSON = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [ -93.8594444, 
+          33.08944444
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+};
+
+//add sb geojson to map with flood stage cutoffs using different icons and a popup containing the information
+L.geoJSON(sbgeoJSON,  {
+	pointToLayer: function (feature, latlng) {
+		if (sb >= 41) return L.marker(latlng, {icon:maroondot});
+		else if (sb >= 39 && sb < 41) return L.marker(latlng, {icon:reddot});
+	    	else if (sb >= 37 && sb < 39) return L.marker(latlng, {icon:orangedot});
+	    	else return L.marker(latlng, {icon:greendot});
+	}
+//popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Spring Bank, AR</p><br><h6>Current height: </h6><p>' + sb + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Spring-Bank.html" target="_blank" rel="noopener noreferrer"><img src= "img/SB.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+
 //create global talco variable and retrieve information, assign it to talco
 var talco;    
     $.ajax({
