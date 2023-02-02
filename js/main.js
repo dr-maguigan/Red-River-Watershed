@@ -10,7 +10,7 @@ map.fitBounds(bounds);
 //create icon for river gages with options for green, yellow, and orange
 var dotIcon = L.Icon.extend({
     				options: {
-        				iconSize:     [14, 14],
+        				iconSize:     [12, 12],
         				iconAnchor:   [0, 0],
        					popupAnchor:  [0, -30]
     				}
