@@ -19,7 +19,7 @@ var dotIcon = L.Icon.extend({
 			var reddot = new dotIcon({iconUrl: 'img/red_dot.png'})
 			var greendot = new dotIcon({iconUrl: 'img/green_dot.png'})
 			var maroondot = new dotIcon({iconUrl: 'img/maroon_dot.png'})
-			var cleardot = new dotIcon([iconUrl: 'img/clear_dot.png'})
+			var cleardot = new dotIcon({iconUrl: 'img/clear_dot.png'})
 			
 //create global childress variable and retrieve information, assign it to childress   		
 var childress;    
