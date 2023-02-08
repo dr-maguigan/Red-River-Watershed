@@ -61,7 +61,7 @@ L.geoJSON(childressgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html" target="_blank" rel="noopener noreferrer"><img src= "img/Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html" alt="Childress Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 			
 //create global wayside variable and retrieve information, assign it to wayside	
 var wayside;    
@@ -103,7 +103,7 @@ L.geoJSON(waysidegeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Wayside, TX</p><br><h6>Current height: </h6><p>' + wayside + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Wayside.html" target="_blank" rel="noopener noreferrer"><img src= "img/Wayside.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Wayside, TX</p><br><h6>Current height: </h6><p>' + wayside + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Wayside.html" alt="Wayside Hydrograph"target="_blank" rel="noopener noreferrer"><img src= "img/Wayside.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create global wellington variable and retrieve information, assign it to wellington	
 var wellington;    
@@ -146,7 +146,7 @@ L.geoJSON(wellingtongeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Salt Fork Red River near Wellington, OK</p><br><h6>Current height: </h6><p>' + wellington + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Salt-Fork-Red-River-Wellington.html" target="_blank" rel="noopener noreferrer"><img src= "img/Wellington.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Salt Fork Red River near Wellington, OK</p><br><h6>Current height: </h6><p>' + wellington + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Salt-Fork-Red-River-Wellington.html" alt="Wellington Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Wellington.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 
 //create global carter variable and retrieve information, assign it to carter	
@@ -190,7 +190,7 @@ L.geoJSON(cartergeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>North Fork Red River near Carter, OK</p><br><h6>Current height: </h6><p>' + carter + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/North-Fork-Red-River-Carter.html" target="_blank" rel="noopener noreferrer"><img src= "img/Carter.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>North Fork Red River near Carter, OK</p><br><h6>Current height: </h6><p>' + carter + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/North-Fork-Red-River-Carter.html" alt="Carter Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Carter.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create global vernon variable and retrieve information, assign it to vernon	
 var vernon;    
@@ -233,7 +233,7 @@ L.geoJSON(vernongeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Pease River near Vernon, TX</p><br><h6>Current height: </h6><p>' + vernon + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Pease-River-Vernon.html" target="_blank" rel="noopener noreferrer"><img src= "img/Vernon.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Pease River near Vernon, TX</p><br><h6>Current height: </h6><p>' + vernon + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Pease-River-Vernon.html" alt="Vernon Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Vernon.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 			
 //create global burk variable and retrieve information, assign it to burk
 var burk;    
@@ -275,7 +275,7 @@ L.geoJSON(burkgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Red River near Burkburnett, TX</p><br><h6>Current height: </h6><p>' + burk + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Burkburnett.html" target="_blank" rel="noopener noreferrer"><img src= "img/Burkburnett.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River near Burkburnett, TX</p><br><h6>Current height: </h6><p>' + burk + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Burkburnett.html" alt="Burkburnett Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Burkburnett.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 			
 //create global gaines variable and retrieve information, assign it to gaines
 var gaines;    
@@ -317,7 +317,7 @@ L.geoJSON(gainesgeoJSON,  {
 	    	else if (gaines >= 25 && gaines < 28) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
-}).bindPopup('<h6>Station Name:</h6><br><p>Red River near Gainesville, TX</p><br><h6>Current height: </h6><p>' + gaines + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Gainesville.html" target="_blank" rel="noopener noreferrer"><img src= "img/Gainesville.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River near Gainesville, TX</p><br><h6>Current height: </h6><p>' + gaines + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Gainesville.html" alt="Gainesville Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Gainesville.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create global cheyenne variable and retrieve information, assign it to cheyenne
 var cheyenne;    
@@ -360,7 +360,7 @@ L.geoJSON(cheyennegeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Washita River near Cheyenne, OK</p><br><h6>Current height: </h6><p>' + cheyenne + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Cheyenne.html" target="_blank" rel="noopener noreferrer"><img src= "img/Cheyenne.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Washita River near Cheyenne, OK</p><br><h6>Current height: </h6><p>' + cheyenne + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Cheyenne.html" alt="Cheyenne Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Cheyenne.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create global ana variable and retrieve information, assign it to ana
 var ana;    
@@ -403,7 +403,7 @@ L.geoJSON(anageoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Washita River at Anadarko, OK</p><br><h6>Current height: </h6><p>' + ana + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Anadarko.html" target="_blank" rel="noopener noreferrer"><img src= "img/Ana.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Washita River at Anadarko, OK</p><br><h6>Current height: </h6><p>' + ana + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Anadarko.html" alt="Anadarko Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Ana.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create global arthur variable and retrieve information, assign it to arthur
 var arthur;    
@@ -446,7 +446,7 @@ L.geoJSON(arthurgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Arthur City, TX</p><br><h6>Current height: </h6><p>' + arthur + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Arthur-City.html" target="_blank" rel="noopener noreferrer"><img src= "img/Arthur.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Arthur City, TX</p><br><h6>Current height: </h6><p>' + arthur + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Arthur-City.html" alt="Arthur City Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Arthur.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create global dekalb variable and retrieve information, assign it to dekalb
 var dekalb;    
@@ -489,7 +489,7 @@ L.geoJSON(dekalbgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Red River near De Kalb, TX</p><br><h6>Current height: </h6><p>' + dekalb + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-DeKalb.html" target="_blank" rel="noopener noreferrer"><img src= "img/DeKalb.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River near De Kalb, TX</p><br><h6>Current height: </h6><p>' + dekalb + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-DeKalb.html" alt="De Kalb Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/DeKalb.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create global dickson variable and retrieve information, assign it to dickson
 var dickson;    
@@ -532,7 +532,7 @@ L.geoJSON(dicksongeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Washita River near Dickson, OK</p><br><h6>Current height: </h6><p>' + dickson + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Dickson.html" target="_blank" rel="noopener noreferrer"><img src= "img/Dickson.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Washita River near Dickson, OK</p><br><h6>Current height: </h6><p>' + dickson + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Washita-River-Dickson.html" alt="Dickson Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Dickson.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create global clayton variable and retrieve information, assign it to clayton
 var clayton;    
@@ -575,7 +575,7 @@ L.geoJSON(claytongeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Kiamichi River near Clayton, OK</p><br><h6>Current height: </h6><p>' + clayton + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Kiamichi-River-Clayton.html" target="_blank" rel="noopener noreferrer"><img src= "img/Clayton.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Kiamichi River near Clayton, OK</p><br><h6>Current height: </h6><p>' + clayton + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Kiamichi-River-Clayton.html" alt="Clayton Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Clayton.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create global antlers variable and retrieve information, assign it to antlers
 var antlers;    
@@ -618,7 +618,7 @@ L.geoJSON(antlersgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Kiamichi River near Antlers, OK</p><br><h6>Current height: </h6><p>' + antlers + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Kiamichi-River-Antlers.html" target="_blank" rel="noopener noreferrer"><img src= "img/Antlers.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Kiamichi River near Antlers, OK</p><br><h6>Current height: </h6><p>' + antlers + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Kiamichi-River-Antlers.html" alt="Antlers Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Antlers.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create global idabel variable and retrieve information, assign it to idabel
 var idabel;    
@@ -661,7 +661,7 @@ L.geoJSON(idabelgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Little River below Lukfata Creek near Idabel, OK</p><br><h6>Current height: </h6><p>' + idabel + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Little-River-Idabel.html" target="_blank" rel="noopener noreferrer"><img src= "img/Idabel.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Little River below Lukfata Creek near Idabel, OK</p><br><h6>Current height: </h6><p>' + idabel + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Little-River-Idabel.html" alt="Idabel Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Idabel.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 		
 //create global indar variable and retrieve information, assign it to indar
 var indar;    
@@ -704,7 +704,7 @@ L.geoJSON(indargeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Index, AR</p><br><h6>Current height: </h6><p>' + indar + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Index.html" target="_blank" rel="noopener noreferrer"><img src= "img/Index.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Index, AR</p><br><h6>Current height: </h6><p>' + indar + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Index.html" alt="Index Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Index.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create global sb variable and retrieve information, assign it to sb
 var sb;    
@@ -747,7 +747,7 @@ L.geoJSON(sbgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Spring Bank, AR</p><br><h6>Current height: </h6><p>' + sb + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Spring-Bank.html" target="_blank" rel="noopener noreferrer"><img src= "img/SB.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Spring Bank, AR</p><br><h6>Current height: </h6><p>' + sb + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Spring-Bank.html" alt="Spring Bank Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/SB.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create global talco variable and retrieve information, assign it to talco
 var talco;    
@@ -790,7 +790,7 @@ L.geoJSON(talcogeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Sulphur River near Talco, TX</p><br><h6>Current height: </h6><p>' + talco + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Sulphur-River-Talco.html" target="_blank" rel="noopener noreferrer"><img src= "img/Talco.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Sulphur River near Talco, TX</p><br><h6>Current height: </h6><p>' + talco + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Sulphur-River-Talco.html" alt="Talco Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Talco.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 		
 //create global shreveport variable and retrieve information, assign it to shreveport	
 var shreveport;    
@@ -833,7 +833,7 @@ L.geoJSON(shreveportgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Shreveport, LA</p><br><h6>Current height: </h6><p>' + shreveport + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Shreveport.html" target="_blank" rel="noopener noreferrer"><img src= "img/Shreveport.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Shreveport, LA</p><br><h6>Current height: </h6><p>' + shreveport + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Shreveport.html" alt="Shreveport Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Shreveport.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 			
 //create global coush variable and retrieve information, assign it to coush	
 var coush;    
@@ -876,7 +876,7 @@ L.geoJSON(coushgeoJSON,  {
 	    	else return L.marker(latlng, {icon:greendot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
-}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Coushatta, LA</p><br><h6>Current height: </h6><p>' + coush + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Coushatta.html" target="_blank" rel="noopener noreferrer"><img src= "img/Coushatta.PNG"</a>', {maxWidth: "200px"}).addTo(map);
+}).bindPopup('<h6>Station Name:</h6><br><p>Red River at Coushatta, LA</p><br><h6>Current height: </h6><p>' + coush + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Coushatta.html" alt="Coushatta Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Coushatta.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 
 //create and define rivers display properties
 var riverStyle = {
