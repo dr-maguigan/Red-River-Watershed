@@ -19,6 +19,7 @@ var dotIcon = L.Icon.extend({
 			var reddot = new dotIcon({iconUrl: 'img/red_dot.png'})
 			var greendot = new dotIcon({iconUrl: 'img/green_dot.png'})
 			var maroondot = new dotIcon({iconUrl: 'img/maroon_dot.png'})
+			var cleardot = new dotIcon([iconUrl: 'img/clear_dot.png'})
 			
 //create global childress variable and retrieve information, assign it to childress   		
 var childress;    
@@ -54,7 +55,8 @@ var childressgeoJSON = {
 //add childress geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(childressgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (childress >= 14) return L.marker(latlng, {icon:reddot});
+		if (childress = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (childress >= 14) return L.marker(latlng, {icon:reddot});
 	    	else if (childress >= 10 && childress < 14) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
@@ -95,7 +97,8 @@ var waysidegeoJSON = {
 //add wayside geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(waysidegeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (wayside >= 15) return L.marker(latlng, {icon:reddot});
+		if (wayside = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (wayside >= 15) return L.marker(latlng, {icon:reddot});
 	    	else if (wayside >= 10 && wayside < 15) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
@@ -136,7 +139,8 @@ var wellingtongeoJSON = {
 //add wellington geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(wellingtongeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (wellington >= 13) return L.marker(latlng, {icon:maroondot});
+		if (wellington = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (wellington >= 13) return L.marker(latlng, {icon:maroondot});
 		else if (wellington >= 10 && wellington < 13) return L.marker(latlng, {icon:reddot});
 	    	else if (wellington >= 8 && wellington < 10) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -179,7 +183,8 @@ var cartergeoJSON = {
 //add carter geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(cartergeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (carter >= 18) return L.marker(latlng, {icon:maroondot});
+		if (carter = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (carter >= 18) return L.marker(latlng, {icon:maroondot});
 		else if (carter >= 17 && carter < 18) return L.marker(latlng, {icon:reddot});
 	    	else if (carter >= 16 && carter < 17) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -221,7 +226,8 @@ var vernongeoJSON = {
 //add vernon geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(vernongeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (vernon >= 19) return L.marker(latlng, {icon:maroondot});
+		if (vernon = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (vernon >= 19) return L.marker(latlng, {icon:maroondot});
 		else if (vernon >= 17 && vernon < 19) return L.marker(latlng, {icon:reddot});
 	    	else if (vernon >= 15 && vernon < 17) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -263,7 +269,8 @@ var burkgeoJSON = {
 //add burk geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(burkgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (burk >= 12) return L.marker(latlng, {icon:reddot});
+		if (burk = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (burk >= 12) return L.marker(latlng, {icon:reddot});
 	    	else if (burk >= 9 && burk < 12) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
 	}
@@ -304,7 +311,8 @@ var gainesgeoJSON = {
 //add gaines geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(gainesgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (gaines >= 34) return L.marker(latlng, {icon:maroondot});
+		if (gaines = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (gaines >= 34) return L.marker(latlng, {icon:maroondot});
 		else if (gaines >=28 && gaines <34) return L.marker(latlng, {icon:reddot});
 	    	else if (gaines >= 25 && gaines < 28) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -345,7 +353,8 @@ var cheyennegeoJSON = {
 //add ana geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(cheyennegeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (cheyenne >= 17) return L.marker(latlng, {icon:maroondot});
+		if (cheyenne = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (cheyenne >= 17) return L.marker(latlng, {icon:maroondot});
 		else if (cheyenne >= 15 && cheyenne < 17) return L.marker(latlng, {icon:reddot});
 	    	else if (cheyenne >= 13.5 && cheyenne < 15) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -387,7 +396,8 @@ var anageoJSON = {
 //add ana geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(anageoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (ana >= 23) return L.marker(latlng, {icon:maroondot});
+		if (ana = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (ana >= 23) return L.marker(latlng, {icon:maroondot});
 		else if (ana >= 21 && ana < 23) return L.marker(latlng, {icon:reddot});
 	    	else if (ana >= 19 && ana < 21) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -429,7 +439,8 @@ var arthurgeoJSON = {
 //add arthur geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(arthurgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (arthur >= 33) return L.marker(latlng, {icon:maroondot});
+		if (arthur = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (arthur >= 33) return L.marker(latlng, {icon:maroondot});
 		else if (arthur >= 30 && arthur < 33) return L.marker(latlng, {icon:reddot});
 	    	else if (arthur >= 27 && arthur < 30) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -471,7 +482,8 @@ var dekalbgeoJSON = {
 //add arthur geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(dekalbgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (dekalb >= 30) return L.marker(latlng, {icon:maroondot});
+		if (dekalb = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (dekalb >= 30) return L.marker(latlng, {icon:maroondot});
 		else if (dekalb >= 27 && dekalb < 30) return L.marker(latlng, {icon:reddot});
 	    	else if (dekalb >= 24 && dekalb < 27) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -513,7 +525,8 @@ var dicksongeoJSON = {
 //add dickson geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(dicksongeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (dickson >= 31) return L.marker(latlng, {icon:maroondot});
+		if (dickson = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (dickson >= 31) return L.marker(latlng, {icon:maroondot});
 		else if (dickson >= 29 && dickson < 31) return L.marker(latlng, {icon:reddot});
 	    	else if (dickson >= 27 && dickson < 29) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -525,7 +538,7 @@ L.geoJSON(dicksongeoJSON,  {
 var clayton;    
     $.ajax({
     type: "GET",
-    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07335790 &parameterCd=00065&siteStatus=all",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07335790&parameterCd=00065&siteStatus=all",
     dataType: 'json',
     async: false,
     data: $(this).serialize(),
@@ -555,7 +568,8 @@ var claytongeoJSON = {
 //add antlers geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(claytongeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (clayton >= 21) return L.marker(latlng, {icon:maroondot});
+		if (clayton = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (clayton >= 21) return L.marker(latlng, {icon:maroondot});
 		else if (clayton >= 19 && clayton < 21) return L.marker(latlng, {icon:reddot});
 	    	else if (clayton >= 17 && clayton < 19) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -597,7 +611,8 @@ var antlersgeoJSON = {
 //add antlers geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(antlersgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (antlers >= 35) return L.marker(latlng, {icon:maroondot});
+		if (antlers = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (antlers >= 35) return L.marker(latlng, {icon:maroondot});
 		else if (antlers >= 29 && antlers < 35) return L.marker(latlng, {icon:reddot});
 	    	else if (antlers >= 25 && antlers < 29) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -639,7 +654,8 @@ var idabelgeoJSON = {
 //add idabel geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(idabelgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (idabel >= 34) return L.marker(latlng, {icon:maroondot});
+		if (idabel = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (idabel >= 34) return L.marker(latlng, {icon:maroondot});
 		else if (idabel >= 32 && idabel < 34) return L.marker(latlng, {icon:reddot});
 	    	else if (idabel >= 30 && idabel < 32) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -681,7 +697,8 @@ var indargeoJSON = {
 //add indar geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(indargeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (indar >= 28) return L.marker(latlng, {icon:maroondot});
+		if (indar = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (indar >= 28) return L.marker(latlng, {icon:maroondot});
 		else if (indar >= 26 && indar < 28) return L.marker(latlng, {icon:reddot});
 	    	else if (indar >= 25 && indar < 26) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -693,7 +710,7 @@ L.geoJSON(indargeoJSON,  {
 var sb;    
     $.ajax({
     type: "GET",
-    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07344370 &parameterCd=00065&siteStatus=all",
+    url: "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07344370&parameterCd=00065&siteStatus=all",
     dataType: 'json',
     async: false,
     data: $(this).serialize(),
@@ -723,7 +740,8 @@ var sbgeoJSON = {
 //add sb geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(sbgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (sb >= 41) return L.marker(latlng, {icon:maroondot});
+		if (sb = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (sb >= 41) return L.marker(latlng, {icon:maroondot});
 		else if (sb >= 39 && sb < 41) return L.marker(latlng, {icon:reddot});
 	    	else if (sb >= 37 && sb < 39) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -765,7 +783,8 @@ var talcogeoJSON = {
 //add indar geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(talcogeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (talco >= 27.5) return L.marker(latlng, {icon:maroondot});
+		if (talco = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (talco >= 27.5) return L.marker(latlng, {icon:maroondot});
 		else if (talco >= 26 && talco < 27.5) return L.marker(latlng, {icon:reddot});
 	    	else if (talco >= 20 && talco < 26) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -807,7 +826,8 @@ var shreveportgeoJSON = {
 //add shreveport geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(shreveportgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (shreveport >= 33) return L.marker(latlng, {icon:maroondot});
+		if (shreveport = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (shreveport >= 33) return L.marker(latlng, {icon:maroondot});
 		else if (shreveport >= 31.5 && shreveport < 33) return L.marker(latlng, {icon:reddot});
 	    	else if (shreveport >= 30 && shreveport < 31.5) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -849,7 +869,8 @@ var coushgeoJSON = {
 //add coush geojson to map with flood stage cutoffs using different icons and a popup containing the information	   
 L.geoJSON(coushgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (coush >= 37) return L.marker(latlng, {icon:maroondot});
+		if (coush = -99999) return L.marker(latlng, {icon:cleardot});
+		else if (coush >= 37) return L.marker(latlng, {icon:maroondot});
 		else if (coush >= 33 && coush < 37) return L.marker(latlng, {icon:reddot});
 	    	else if (coush >= 31 && coush < 33) return L.marker(latlng, {icon:orangedot});
 	    	else return L.marker(latlng, {icon:greendot});
@@ -919,6 +940,7 @@ legend.onAdd = function(map) {
   	div.innerHTML += '<i class="icon2"></i><span>Minor Flooding</span><br>';
 	div.innerHTML += '<i class="icon3"></i><span>Moderate Flooding</span><br>';
   	div.innerHTML += '<i class="icon4"></i><span>Major Flooding</span>';
+	div.innerHTML += '<i class="icon5"></i><span>Currently Unavailable</span>';
 
  
   return div;
