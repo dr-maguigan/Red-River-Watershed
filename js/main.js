@@ -939,7 +939,7 @@ legend.onAdd = function(map) {
   	div.innerHTML += '<i class="icon1"></i><span>Normal Conditions</span><br>';
   	div.innerHTML += '<i class="icon2"></i><span>Minor Flooding</span><br>';
 	div.innerHTML += '<i class="icon3"></i><span>Moderate Flooding</span><br>';
-  	div.innerHTML += '<i class="icon4"></i><span>Major Flooding</span>';
+  	div.innerHTML += '<i class="icon4"></i><span>Major Flooding</span><br>';
 	div.innerHTML += '<i class="icon5"></i><span>Currently Unavailable</span>';
 
  
