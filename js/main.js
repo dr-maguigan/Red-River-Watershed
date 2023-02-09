@@ -950,28 +950,6 @@ legend.onAdd = function(map) {
 //add legend to map
 legend.addTo(map);
 
-//add watermark to map
-L.Control.Watermark = L.Control.extend({
-    				onAdd: function(map) {
-        				var img = L.DomUtil.create('img');
-
-        				img.src = "img/text_next_to_logo.png";
-        				img.style.width = '900px';
-					img.alt = "Red River Watershed Managment Institute Logo";
-
-        return img;
-    },
-
-    onRemove: function(map) {
-    }
-});
-
-L.control.watermark = function(opts) {
-    return new L.Control.Watermark(opts);
-}
-
-L.control.watermark({ position: "bottomright"}).addTo(map);
-
 //leaflet radar source code: https://www.eldoradoweather.com/current/misc/maproom/leaflet/leaflet.php
 //create empty radarLayers and define hour to use for nexrad images, add radarLayers to map
 var radarLayers = [];
