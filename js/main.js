@@ -315,7 +315,7 @@ L.geoJSON(gainesgeoJSON,  {
 		if (gaines >= 34) return L.marker(latlng, {icon:maroondot});
 		else if (gaines >=28 && gaines <34) return L.marker(latlng, {icon:reddot});
 	    	else if (gaines >= 25 && gaines < 28) return L.marker(latlng, {icon:orangedot});
-	    	else if (gaines >= -2 && gaines <10) return L.marker(latlng, {icon:greendot});
+	    	else if (gaines >= -2 && gaines < 10) return L.marker(latlng, {icon:greendot});
                 else return L.marker(latlng, {icon:cleardot});
 	}
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River near Gainesville, TX</p><br><h6>Current height: </h6><p>' + gaines + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Gainesville.html" alt="Gainesville Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Gainesville.PNG"</a>', {maxWidth: "200px"}).addTo(map);
@@ -357,7 +357,7 @@ L.geoJSON(cheyennegeoJSON,  {
 		if (cheyenne >= 17) return L.marker(latlng, {icon:maroondot});
 		else if (cheyenne >= 15 && cheyenne < 17) return L.marker(latlng, {icon:reddot});
 	    	else if (cheyenne >= 13.5 && cheyenne < 15) return L.marker(latlng, {icon:orangedot});
-	    	else if (cheyenne >= -2 && cheyenne <13.5) return L.marker(latlng, {icon:greendot});
+	    	else if (cheyenne >= -2 && cheyenne < 13.5) return L.marker(latlng, {icon:greendot});
                 else return L.marker(latlng, {icon:cleardot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
@@ -702,7 +702,7 @@ L.geoJSON(indargeoJSON,  {
 		else if (indar >= 26 && indar < 28) return L.marker(latlng, {icon:reddot});
 	    	else if (indar >= 25 && indar < 26) return L.marker(latlng, {icon:orangedot});
 	    	else if (indar >= -2 && indar <25) return L.marker(latlng, {icon:greendot});
-                else return L.marker(latl g, {icon:cleardot});
+                else return L.marker(latlng, {icon:cleardot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River at Index, AR</p><br><h6>Current height: </h6><p>' + indar + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Index.html" alt="Index Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Index.PNG"</a>', {maxWidth: "200px"}).addTo(map);
