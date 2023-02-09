@@ -55,10 +55,10 @@ var childressgeoJSON = {
 //add childress geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(childressgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (childress = -99999) return L.marker(latlng, {icon:cleardot});
-		else if (childress >= 14) return L.marker(latlng, {icon:reddot});
+	        if (childress >= 14) return L.marker(latlng, {icon:reddot});
 	    	else if (childress >= 10 && childress < 14) return L.marker(latlng, {icon:orangedot});
-	    	else return L.marker(latlng, {icon:greendot});
+	    	else if (childress >= -2 && childress <10) return L.marker(latlng, {icon:greendot});
+                else return L.marker(latlng, {icon:cleardot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Childress, TX</p><br><h6>Current height: </h6><p>' + childress + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Childress.html" alt="Childress Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Childress.PNG"</a>', {maxWidth: "200px"}).addTo(map);
@@ -97,10 +97,10 @@ var waysidegeoJSON = {
 //add wayside geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(waysidegeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (wayside = -99999) return L.marker(latlng, {icon:cleardot});
-		else if (wayside >= 15) return L.marker(latlng, {icon:reddot});
+		if (wayside >= 15) return L.marker(latlng, {icon:reddot});
 	    	else if (wayside >= 10 && wayside < 15) return L.marker(latlng, {icon:orangedot});
-	    	else return L.marker(latlng, {icon:greendot});
+	    	else if (wayside >= -2 && wayside <10) return L.marker(latlng, {icon:greendot});
+                else return L.marker(latlng, {icon:cleardot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>Prairie Dog Town Fork of the Red River near Wayside, TX</p><br><h6>Current height: </h6><p>' + wayside + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Prairie-Dog-Town-Fork-Wayside.html" alt="Wayside Hydrograph"target="_blank" rel="noopener noreferrer"><img src= "img/Wayside.PNG"</a>', {maxWidth: "200px"}).addTo(map);
@@ -139,11 +139,11 @@ var wellingtongeoJSON = {
 //add wellington geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(wellingtongeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (wellington = -99999) return L.marker(latlng, {icon:cleardot});
-		else if (wellington >= 13) return L.marker(latlng, {icon:maroondot});
+		if (wellington >= 13) return L.marker(latlng, {icon:maroondot});
 		else if (wellington >= 10 && wellington < 13) return L.marker(latlng, {icon:reddot});
 	    	else if (wellington >= 8 && wellington < 10) return L.marker(latlng, {icon:orangedot});
-	    	else return L.marker(latlng, {icon:greendot});
+	        else if (wellington >= -2 && wellington <8) return L.marker(latlng, {icon:greendot});
+                else return L.marker(latlng, {icon:cleardot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>Salt Fork Red River near Wellington, OK</p><br><h6>Current height: </h6><p>' + wellington + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Salt-Fork-Red-River-Wellington.html" alt="Wellington Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Wellington.PNG"</a>', {maxWidth: "200px"}).addTo(map);
@@ -183,11 +183,11 @@ var cartergeoJSON = {
 //add carter geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(cartergeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (carter = -99999) return L.marker(latlng, {icon:cleardot});
-		else if (carter >= 18) return L.marker(latlng, {icon:maroondot});
+		if (carter >= 18) return L.marker(latlng, {icon:maroondot});
 		else if (carter >= 17 && carter < 18) return L.marker(latlng, {icon:reddot});
 	    	else if (carter >= 16 && carter < 17) return L.marker(latlng, {icon:orangedot});
-	    	else return L.marker(latlng, {icon:greendot});
+	    	else if (carter >= -2 && wayside <16) return L.marker(latlng, {icon:greendot});
+                else return L.marker(latlng, {icon:cleardot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>North Fork Red River near Carter, OK</p><br><h6>Current height: </h6><p>' + carter + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/North-Fork-Red-River-Carter.html" alt="Carter Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Carter.PNG"</a>', {maxWidth: "200px"}).addTo(map);
@@ -226,11 +226,11 @@ var vernongeoJSON = {
 //add vernon geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(vernongeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (vernon = -99999) return L.marker(latlng, {icon:cleardot});
-		else if (vernon >= 19) return L.marker(latlng, {icon:maroondot});
+		if (vernon >= 19) return L.marker(latlng, {icon:maroondot});
 		else if (vernon >= 17 && vernon < 19) return L.marker(latlng, {icon:reddot});
 	    	else if (vernon >= 15 && vernon < 17) return L.marker(latlng, {icon:orangedot});
-	    	else return L.marker(latlng, {icon:greendot});
+	    	else if (vernon >= -2 && vernon <15) return L.marker(latlng, {icon:greendot});
+                else return L.marker(latlng, {icon:cleardot});
 	}
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>Pease River near Vernon, TX</p><br><h6>Current height: </h6><p>' + vernon + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Pease-River-Vernon.html" alt="Vernon Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Vernon.PNG"</a>', {maxWidth: "200px"}).addTo(map);
@@ -269,11 +269,12 @@ var burkgeoJSON = {
 //add burk geojson to map with flood stage cutoffs using different icons and a popup containing the information
 L.geoJSON(burkgeoJSON,  {
 	pointToLayer: function (feature, latlng) {
-		if (burk = -99999) return L.marker(latlng, {icon:cleardot});
-		else if (burk >= 12) return L.marker(latlng, {icon:reddot});
+		if (burk >= 12) return L.marker(latlng, {icon:reddot});
 	    	else if (burk >= 9 && burk < 12) return L.marker(latlng, {icon:orangedot});
-	    	else return L.marker(latlng, {icon:greendot});
+	    	else if (burk >= -2 && burk <9) return L.marker(latlng, {icon:greendot});
+                else return L.marker(latlng, {icon:cleardot});
 	}
+
 //popup has properties of name, height as defined and assigned to global variable, and a link to the 2022 data with a screenshot serving as the hyperlink
 }).bindPopup('<h6>Station Name:</h6><br><p>Red River near Burkburnett, TX</p><br><h6>Current height: </h6><p>' + burk + ' ft<p><br><h6>2022 Data:</h6><br><a href = "https://dr-maguigan.github.io/Red-River-Watershed/Red-River-Burkburnett.html" alt="Burkburnett Hydrograph" target="_blank" rel="noopener noreferrer"><img src= "img/Burkburnett.PNG"</a>', {maxWidth: "200px"}).addTo(map);
 			
