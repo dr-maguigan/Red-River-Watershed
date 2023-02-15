@@ -986,7 +986,6 @@ function myLoop () {
    setTimeout(function () {    
      radarLayers.map(function(layer){ layer.setOpacity(0)});
      radarLayers[i].setOpacity(0.5);
-     console.log(i);
      i++;
      //  if the counter < 10, call the loop function
      if (i < 9) {            
