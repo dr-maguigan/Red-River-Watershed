@@ -149,31 +149,71 @@
 			};
 
 			//add graph with line graph for gage levels, points for median levels
-			new Chart("myChart", {
+			const myChart = new Chart("myChart", {
 				data: {
 					datasets: [{
-	    					type: "line",
-	    					label: "Gage Height",
-      						fill: false,
-      						lineTension: 0,
-      						backgroundColor: "rgba(166, 212, 255,1.0)",
-      						borderColor: "rgba(0, 0, 255,0.1)",
-      						data: yValues
-    						},
- 						{
   						type: "line",
   						data: averages,
-						label: "15-year Avg Gage Height",
+						label: "15-Year Avg",
 						fill: false,
-      						lineTension: 0,
-            					backgroundColor: "#3c4a7d",
-            					borderColor: "#3c4a7d"
-					}],
+      					lineTension: 0,
+            			backgroundColor: "#3c4a7d",
+            			borderColor: "#3c4a7d"
+						},
+                    	{
+	    				type: "line",
+	    				label: "2022",
+      					fill: false,
+      					lineTension: 0,
+      					backgroundColor: "rgba(166, 212, 255,1.0)",
+      					borderColor: "rgba(0, 0, 255,0.1)",
+      					data: yr2022
+                        },
+                        {
+                        type: "line",
+	    				label: "2021",
+      					fill: false,
+      					lineTension: 0,
+      					backgroundColor: "#6093a1",
+      					borderColor: "#6093a1",
+      					data: yr2021,
+                		hidden: true
+                        },
+                        {
+                        type: "line",
+	    				label: "2020",
+      					fill: false,
+      					lineTension: 0,
+      					backgroundColor: "#58c8d1",
+      					borderColor: "#58c8d1",
+      					data: yr2020,
+                		hidden: true
+                        },
+                        {
+                        type: "line",
+	    				label: "2019",
+      					fill: false,
+      					lineTension: 0,
+      					backgroundColor: "#c1e5e8",
+      					borderColor: "#c1e5e8",
+      					data: yr2019,
+                		hidden: true
+                        },
+                        {
+                        type: "line",
+	    				label: "2018",
+      					fill: false,
+      					lineTension: 0,
+      					backgroundColor: "#b8c1c2",
+      					borderColor: "#b8c1c2",
+      					data: yr2018,
+                		hidden: true
+                        }
+    				],
             			labels: xValues
 				},
   				options: options
 			});
-
-		</script>
-</body>
-</html>
+            </script>
+            </body>
+            </html>
