@@ -3,7 +3,7 @@ var map = L.map('map');
 
 //create bounding points and bound map to those points
 var tr = L.latLng(35.34952836642389, -92.28950417754907);
-var bl = L.latLng(31.41562208125445, -102.77481382965912);
+var bl = L.latLng(31.91562208125445, -102.77481382965912);
 var bounds = L.latLngBounds(tr, bl);
 map.fitBounds(bounds);
 
