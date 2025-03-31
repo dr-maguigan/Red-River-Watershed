@@ -18,8 +18,12 @@
     	h1 {text-align: center;
 	font-family: Roboto;
 	color: #7bb4ba;}
+    
+    h5 {text-align: center;
+	font-family: Oswald;
+	color: #7bb4ba;}
 	   	
-	p {text-align: center;
+	p {text-align: right;
 	font-family: Oswald;
 	color: #7bb4ba;}
 	
@@ -71,12 +75,17 @@
         margin-left: 10px;
 	}
 
-	#qr { max-width: 50px;
-	height: auto;
-	position: absolute;
-        top: 10px;
-        margin-left: 10px;
+	#qr { width: 50px;
+	height: 50px;
+	position: relative;
+        top: 0px;
+        margin-left: 0px;
 	}
+
+	#qr-text {position: relative;
+		  top: 10px;
+		  margin-right: 10px;
+		 }
 	
 	.legend {
   	padding: 6px 8px;
@@ -165,6 +174,7 @@
 
         p {
           font-size: 18px;
+	  text-align: right;
         }
       }
 </style>
@@ -179,6 +189,10 @@
 	<div id="qr">
 	<img src="img/QR_Code.PNG" alt="QR Code to Full Site">
 	</div>
+	
+	<div id="qr-text">
+	<p>View full site</p>
+	</div>
 	<br>
 	
 	<h1>Red River Watershed Conditions</h1>
@@ -186,7 +200,7 @@
   		<div id="map"></div>
 	
   		<script type="text/javascript" src="js/main.js"></script>
-	<p>River gage data were accessed from USGS. The watershed boundary and rivers were derived from NHD.</p>
+	<h5>River gage data were accessed from USGS. The watershed boundary and rivers were derived from NHD.</h5>
 		
 </body>
 </html>
