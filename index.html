@@ -68,18 +68,22 @@
 	margin-right: auto;
 	}
 	
+    #header {position: relative,
+    width: 100%;
+    }
+    
 	#logo { max-width: 200px;
 	height: auto;
-	position: relative;
+	position: absolute;
         top: 10px;
-        margin-left: 10px;
+        left: 10px;
 	}
 
 	#qr { width: 50px;
 	height: 50px;
-	position: relative;
+	position: absolute;
         top: 0px;
-        margin-left: 0px;
+        right: 0px;
 	}
 
 	#qr-text {position: relative;
@@ -180,6 +184,7 @@
 </style>
 </head>
 <body>
+<div id="header">
 	<div id="logo">
 	<a href="https://www.lsus.edu/community/rrwmi">
 	<img src="img/text_white.png" alt="Red River Watershed Management Institute Logo" target="_blank" rel="noopener noreferrer">
@@ -193,6 +198,7 @@
 	<div id="qr-text">
 	<p>View full site</p>
 	</div>
+    </div>
 	<br>
 	
 	<h1>Red River Watershed Conditions</h1>
