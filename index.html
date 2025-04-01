@@ -78,12 +78,15 @@
         top: 10px;
         left: 10px;
 	}
+	#footer {position: relative,
+    width: 100%;
+    }
 
-	#qr {width: 50px;
-	height: 50px;
+	#qr {width: 1%;
+	height: auto;
 	position: absolute;
-        top: 10px;
-        right: 10px;
+        bottom: 10px;
+        left: 10px;
 	}
 
 	.legend {
@@ -195,7 +198,7 @@
 	 		<script type="text/javascript" src="js/main.js"></script>
 	<h5>River gage data were accessed from USGS. The watershed boundary and rivers were derived from NHD.</h5>
 	
-	<div>
+	<div id="footer">
 		<p>View full site</p>
 		<div id="qr">
 			<img src="img/QR_Code.PNG" alt="QR Code to Full Site">
